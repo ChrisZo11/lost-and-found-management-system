@@ -1,0 +1,229 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="LostAndFoundDBDataSet" targetNamespace="http://tempuri.org/LostAndFoundDBDataSet.xsd" xmlns:mstns="http://tempuri.org/LostAndFoundDBDataSet.xsd" xmlns="http://tempuri.org/LostAndFoundDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="LostAndFoundDBDataSet" msdata:IsDataSet="true" msdata:Locale="en-US">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Roles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RoleID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="RoleName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Users">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="Username">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PasswordHash">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FullName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RoleID" type="xs:int" />
+              <xs:element name="IsActive" type="xs:boolean" />
+              <xs:element name="CreatedAt" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ItemTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemTypeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="TypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ItemStatuses">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemStatusID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="StatusName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Items">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ItemName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Location">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemTypeID" type="xs:int" />
+              <xs:element name="ItemStatusID" type="xs:int" />
+              <xs:element name="ReportedBy" type="xs:int" />
+              <xs:element name="DateReported" type="xs:dateTime" />
+              <xs:element name="ImagePath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ClaimStatuses">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClaimStatusID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="StatusName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Claims">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClaimID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ItemID" type="xs:int" />
+              <xs:element name="ClaimantName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContactInfo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProofDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClaimStatusID" type="xs:int" />
+              <xs:element name="ProcessedBy" type="xs:int" minOccurs="0" />
+              <xs:element name="ClaimDate" type="xs:dateTime" />
+              <xs:element name="ProcessedAt" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ClaimPhotoPath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StudentName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StudentNIM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClaimedAt" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Roles" />
+      <xs:field xpath="mstns:RoleID" />
+    </xs:unique>
+    <xs:unique name="Users_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Users" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique name="ItemTypes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ItemTypes" />
+      <xs:field xpath="mstns:ItemTypeID" />
+    </xs:unique>
+    <xs:unique name="ItemStatuses_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ItemStatuses" />
+      <xs:field xpath="mstns:ItemStatusID" />
+    </xs:unique>
+    <xs:unique name="Items_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Items" />
+      <xs:field xpath="mstns:ItemID" />
+    </xs:unique>
+    <xs:unique name="ClaimStatuses_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ClaimStatuses" />
+      <xs:field xpath="mstns:ClaimStatusID" />
+    </xs:unique>
+    <xs:unique name="Claims_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Claims" />
+      <xs:field xpath="mstns:ClaimID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Claims_ClaimStatuses" msdata:parent="ClaimStatuses" msdata:child="Claims" msdata:parentkey="ClaimStatusID" msdata:childkey="ClaimStatusID" />
+      <msdata:Relationship name="FK_Claims_Items" msdata:parent="Items" msdata:child="Claims" msdata:parentkey="ItemID" msdata:childkey="ItemID" />
+      <msdata:Relationship name="FK_Claims_ProcessedBy" msdata:parent="Users" msdata:child="Claims" msdata:parentkey="UserID" msdata:childkey="ProcessedBy" />
+      <msdata:Relationship name="FK_Items_ItemStatuses" msdata:parent="ItemStatuses" msdata:child="Items" msdata:parentkey="ItemStatusID" msdata:childkey="ItemStatusID" />
+      <msdata:Relationship name="FK_Items_ItemTypes" msdata:parent="ItemTypes" msdata:child="Items" msdata:parentkey="ItemTypeID" msdata:childkey="ItemTypeID" />
+      <msdata:Relationship name="FK_Items_Users" msdata:parent="Users" msdata:child="Items" msdata:parentkey="UserID" msdata:childkey="ReportedBy" />
+      <msdata:Relationship name="FK_Users_Roles" msdata:parent="Roles" msdata:child="Users" msdata:parentkey="RoleID" msdata:childkey="RoleID" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

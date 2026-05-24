@@ -135,7 +135,7 @@ Admin dapat membuka form laporan RDLC yang menampilkan seluruh item dalam layout
 | Report | Microsoft ReportViewer (RDLC) |
 | Database | SQL Server / SQL Server Express (ADO.NET) |
 | Spasial | Microsoft.SqlServer.Types |
-| Font | JetBrains Mono (embedded TTF) |
+| Font | Segoe UI Variable Text (system font, fallback Segoe UI) |
 
 ---
 
@@ -320,8 +320,6 @@ lost-and-found-management-system/
 |       |-- LostAndFound.csproj
 |       |-- Application/
 |       |   `-- Program.cs
-|       |-- Assets/Fonts/
-|       |   `-- JetBrainsMono-*.ttf
 |       |-- Core/
 |       |   |-- Models/
 |       |   |-- Services/

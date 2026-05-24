@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Guna.Charts.WinForms;
 using Guna.UI2.WinForms;
@@ -10,6 +11,15 @@ namespace LostAndFound
 {
     public partial class AdminForm : Form
     {
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
+
+        [DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
+
         private enum AdminGridMode
         {
             FoundItems,
@@ -74,12 +84,13 @@ namespace LostAndFound
             Text = "Dashboard Admin - Lost and Found";
             Guna2HtmlLabel lblSubtitle = EnsureHeaderSubtitle();
 
+            ConfigureWindowChrome();
             lblTitle.Text = "Dashboard Admin";
             lblSubtitle.Text = string.Empty;
             UiTheme.StyleTitle(lblTitle, 20F);
             UiTheme.StyleSubtitle(lblSubtitle);
-            lblTitle.Location = new Point(32, 24);
-            lblSubtitle.Location = new Point(34, 61);
+            lblTitle.Location = new Point(32, 66);
+            lblSubtitle.Location = new Point(34, 103);
             lblSubtitle.AutoSize = false;
             lblSubtitle.Size = new Size(292, 20);
             lblSubtitle.Visible = false;
@@ -89,8 +100,8 @@ namespace LostAndFound
             btnLogout.Text = "Keluar";
             btnLogout.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             UiTheme.StyleSecondaryButton(btnLogout);
-            btnLogout.Location = new Point(ClientSize.Width - 116, 30);
-            AddUserBadge(new Point(ClientSize.Width - 468, 30), new Size(232, 36));
+            btnLogout.Location = new Point(ClientSize.Width - 116, 72);
+            AddUserBadge(new Point(ClientSize.Width - 468, 72), new Size(232, 36));
 
             if (lblHeaderActiveMetric == null)
             {
@@ -130,6 +141,83 @@ namespace LostAndFound
             return subtitle;
         }
 
+        private void ConfigureWindowChrome()
+        {
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = true;
+            MinimizeBox = true;
+            panelWindowChrome.MouseDown += WindowChrome_MouseDown;
+            lblWindowTitle.MouseDown += WindowChrome_MouseDown;
+            panelWindowIcon.MouseDown += WindowChrome_MouseDown;
+            panelWindowChrome.BringToFront();
+
+            ConfigureChromeButton(btnWindowMinimize, "-");
+            ConfigureChromeButton(btnWindowMaximize, "□");
+            ConfigureChromeButton(btnWindowClose, "x");
+            btnWindowClose.HoverState.FillColor = UiTheme.Danger;
+            btnWindowClose.HoverState.ForeColor = Color.White;
+
+            btnWindowMinimize.Click += btnWindowMinimize_Click;
+            btnWindowMaximize.Click += btnWindowMaximize_Click;
+            btnWindowClose.Click += btnWindowClose_Click;
+            Resize += (sender, e) =>
+            {
+                UpdateMaximizeButtonText();
+                LayoutDashboardPanels();
+            };
+            UpdateMaximizeButtonText();
+        }
+
+        private void ConfigureChromeButton(Guna2Button button, string text)
+        {
+            button.Text = text;
+            button.FillColor = Color.Transparent;
+            button.ForeColor = UiTheme.Muted;
+            button.BorderRadius = 8;
+            button.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold);
+            button.HoverState.FillColor = Color.FromArgb(230, 238, 243);
+            button.TextOffset = new Point(0, -1);
+        }
+
+        private void WindowChrome_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                return;
+            }
+
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+        }
+
+        private void btnWindowMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnWindowMaximize_Click(object sender, EventArgs e)
+        {
+            WindowState = WindowState == FormWindowState.Maximized
+                ? FormWindowState.Normal
+                : FormWindowState.Maximized;
+            UpdateMaximizeButtonText();
+        }
+
+        private void btnWindowClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void UpdateMaximizeButtonText()
+        {
+            if (btnWindowMaximize == null)
+            {
+                return;
+            }
+
+            btnWindowMaximize.Text = WindowState == FormWindowState.Maximized ? "❐" : "□";
+        }
+
         private void ConfigureReportButton()
         {
             Guna2Button btnReport = Controls["btnReport"] as Guna2Button;
@@ -147,7 +235,7 @@ namespace LostAndFound
 
             btnReport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnReport.Cursor = Cursors.Hand;
-            btnReport.Location = new Point(ClientSize.Width - 224, 30);
+            btnReport.Location = new Point(ClientSize.Width - 224, 72);
             btnReport.Size = new Size(100, 36);
             btnReport.Text = "Laporan";
 
@@ -330,16 +418,20 @@ namespace LostAndFound
             panelItems.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelChart.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panelClaim.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
-            panelItems.Location = new Point(24, 116);
+            panelItems.Location = new Point(24, 146);
             panelItems.Size = new Size(704, 392);
-            panelChart.Location = new Point(752, 116);
+            panelChart.Location = new Point(752, 146);
             panelChart.Size = new Size(464, 392);
-            panelClaim.Location = new Point(24, 532);
+            panelClaim.Location = new Point(24, 562);
             panelClaim.Size = new Size(1192, 158);
 
             UiTheme.StyleCard(panelItems);
             UiTheme.StyleCard(panelChart);
             UiTheme.StyleCard(panelClaim);
+            StyleAdminCard(panelItems);
+            StyleAdminCard(panelChart);
+            StyleAdminCard(panelClaim);
+            ConfigureAccentPanels();
             ConfigureDashboardLayout();
 
             lblItemsTitle.Text = "Barang Ditemukan";
@@ -376,6 +468,37 @@ namespace LostAndFound
             panelItems.Resize += (sender, e) => LayoutItemsPanel();
             panelChart.Resize += (sender, e) => LayoutChartPanel();
             panelClaim.Resize += (sender, e) => LayoutClaimPhotoPanel();
+        }
+
+        private void StyleAdminCard(Guna2ShadowPanel panel)
+        {
+            panel.Radius = 16;
+            panel.ShadowColor = Color.FromArgb(210, 222, 230);
+            panel.ShadowDepth = 4;
+            panel.ShadowShift = 2;
+        }
+
+        private void ConfigureAccentPanels()
+        {
+            ConfigurePanel(panelCanvasAccentTop, new Point(441, 100), new Size(122, 5), Color.FromArgb(210, 230, 229), 2);
+            panelCanvasAccentTop.SendToBack();
+
+            ConfigurePanel(panelItemsAccent, new Point(28, 66), new Size(96, 4), Color.FromArgb(235, 224, 207), 2);
+            ConfigurePanel(panelChartAccent, new Point(28, 24), new Size(96, 4), Color.FromArgb(63, 176, 165), 2);
+            ConfigurePanel(panelClaimAccent, new Point(28, 24), new Size(80, 4), UiTheme.Accent, 2);
+
+            panelItemsAccent.BringToFront();
+            panelChartAccent.BringToFront();
+            panelClaimAccent.BringToFront();
+        }
+
+        private void ConfigurePanel(Guna2Panel panel, Point location, Size size, Color fillColor, int radius)
+        {
+            panel.BackColor = Color.Transparent;
+            panel.BorderRadius = radius;
+            panel.FillColor = fillColor;
+            panel.Location = location;
+            panel.Size = size;
         }
 
         private void ConfigureDashboardLayout()
@@ -418,9 +541,12 @@ namespace LostAndFound
                 return;
             }
 
-            dashboardLayout.Location = new Point(24, 104);
-            dashboardLayout.Size = new Size(Math.Max(1, ClientSize.Width - 48), Math.Max(1, ClientSize.Height - 128));
+            dashboardLayout.Location = new Point(24, 146);
+            dashboardLayout.Size = new Size(Math.Max(1, ClientSize.Width - 48), Math.Max(1, ClientSize.Height - 170));
             dashboardLayout.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelCanvasAccentTop.Location = new Point(
+                dashboardLayout.Left + Math.Max(360, dashboardLayout.Width / 3),
+                Math.Max(100, dashboardLayout.Top - 50));
             LayoutItemsPanel();
             LayoutChartPanel();
             LayoutClaimPhotoPanel();
@@ -843,8 +969,8 @@ namespace LostAndFound
             int chartWidth = Math.Max(220, panelWidth - 56);
             int chartHeight = Math.Max(180, panelHeight - 146);
 
-            chartStats.Location = new Point(28, 20);
-            chartStats.Size = new Size(chartWidth, chartHeight);
+            chartStats.Location = new Point(28, 36);
+            chartStats.Size = new Size(chartWidth, Math.Max(160, chartHeight - 16));
 
             int metricY = Math.Max(chartStats.Bottom + 12, panelHeight - 68);
             int metricWidth = Math.Max(74, Math.Min(112, (panelWidth - 72) / 3));

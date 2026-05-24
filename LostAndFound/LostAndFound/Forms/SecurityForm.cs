@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 
@@ -9,6 +10,15 @@ namespace LostAndFound
 {
     public partial class SecurityForm : Form
     {
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
+
+        [DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
+
         private enum SecurityGridMode
         {
             FoundItems,
@@ -93,11 +103,13 @@ namespace LostAndFound
             Text = "Konsol Security - Lost and Found";
             Guna2HtmlLabel lblSubtitle = EnsureHeaderSubtitle();
 
+            ConfigureWindowChrome();
             lblTitle.Text = "Dashboard Security";
+            lblSubtitle.Text = "Catat laporan, ambil foto, dan proses klaim item aktif";
             UiTheme.StyleTitle(lblTitle, 20F);
             UiTheme.StyleSubtitle(lblSubtitle);
-            lblTitle.Location = new Point(32, 24);
-            lblSubtitle.Location = new Point(34, 61);
+            lblTitle.Location = new Point(32, 66);
+            lblSubtitle.Location = new Point(34, 103);
             lblSubtitle.AutoSize = false;
             lblSubtitle.Size = new Size(340, 20);
             lblTitle.ForeColor = UiTheme.Ink;
@@ -106,9 +118,95 @@ namespace LostAndFound
             btnLogout.Text = "Keluar";
             btnLogout.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             UiTheme.StyleSecondaryButton(btnLogout);
-            btnLogout.Location = new Point(ClientSize.Width - 116, 30);
-            ConfigureUserBadge(new Point(ClientSize.Width - 368, 30), new Size(232, 36));
+            btnLogout.Location = new Point(ClientSize.Width - 116, 72);
+            ConfigureUserBadge(new Point(ClientSize.Width - 368, 72), new Size(232, 36));
             HideWorkflowChips();
+        }
+
+        private void ConfigureWindowChrome()
+        {
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = true;
+            MinimizeBox = true;
+            panelWindowChrome.MouseDown += WindowChrome_MouseDown;
+            lblWindowTitle.MouseDown += WindowChrome_MouseDown;
+            panelWindowIcon.MouseDown += WindowChrome_MouseDown;
+            panelWindowChrome.BringToFront();
+
+            ConfigureChromeButton(btnWindowMinimize, "-");
+            ConfigureChromeButton(btnWindowMaximize, "□");
+            ConfigureChromeButton(btnWindowClose, "x");
+            btnWindowClose.HoverState.FillColor = UiTheme.Danger;
+            btnWindowClose.HoverState.ForeColor = Color.White;
+
+            btnWindowMinimize.Click += btnWindowMinimize_Click;
+            btnWindowMaximize.Click += btnWindowMaximize_Click;
+            btnWindowClose.Click += btnWindowClose_Click;
+            Resize += (sender, e) =>
+            {
+                UpdateMaximizeButtonText();
+                LayoutSecurityPanels();
+            };
+            UpdateMaximizeButtonText();
+        }
+
+        private void ConfigureChromeButton(Guna2Button button, string text)
+        {
+            button.Text = text;
+            button.FillColor = Color.Transparent;
+            button.ForeColor = UiTheme.Muted;
+            button.BorderRadius = 8;
+            button.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold);
+            button.HoverState.FillColor = Color.FromArgb(230, 238, 243);
+            button.TextOffset = new Point(0, -1);
+        }
+
+        private void WindowChrome_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                return;
+            }
+
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+        }
+
+        private void btnWindowMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnWindowMaximize_Click(object sender, EventArgs e)
+        {
+            WindowState = WindowState == FormWindowState.Maximized
+                ? FormWindowState.Normal
+                : FormWindowState.Maximized;
+            UpdateMaximizeButtonText();
+        }
+
+        private void btnWindowClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void UpdateMaximizeButtonText()
+        {
+            if (btnWindowMaximize == null)
+            {
+                return;
+            }
+
+            btnWindowMaximize.Text = WindowState == FormWindowState.Maximized ? "❐" : "□";
+        }
+
+        private void ConfigurePanel(Guna2Panel panel, Point location, Size size, Color fillColor, int radius)
+        {
+            panel.BackColor = Color.Transparent;
+            panel.BorderRadius = radius;
+            panel.FillColor = fillColor;
+            panel.Location = location;
+            panel.Size = size;
         }
 
         private Guna2HtmlLabel EnsureHeaderSubtitle()
@@ -136,16 +234,20 @@ namespace LostAndFound
             panelReport.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             panelTips.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelReport.Location = new Point(24, 116);
+            panelReport.Location = new Point(24, 146);
             panelReport.Size = new Size(500, 320);
-            panelTips.Location = new Point(546, 116);
+            panelTips.Location = new Point(546, 146);
             panelTips.Size = new Size(650, 320);
-            panelGrid.Location = new Point(24, 460);
+            panelGrid.Location = new Point(24, 490);
             panelGrid.Size = new Size(1172, 316);
 
             UiTheme.StyleCard(panelReport);
             UiTheme.StyleCard(panelTips);
             UiTheme.StyleCard(panelGrid);
+            StyleSecurityCard(panelReport);
+            StyleSecurityCard(panelTips);
+            StyleSecurityCard(panelGrid);
+            ConfigureAccentPanels();
             ConfigureSecurityLayout();
 
             lblReportTitle.Text = "Laporan Baru";
@@ -240,6 +342,41 @@ namespace LostAndFound
             btnRetakePhoto.Click += btnRetakePhoto_Click;
         }
 
+        private void StyleSecurityCard(Guna2ShadowPanel panel)
+        {
+            panel.Radius = 16;
+            panel.ShadowColor = Color.FromArgb(210, 222, 230);
+            panel.ShadowDepth = 4;
+            panel.ShadowShift = 2;
+        }
+
+        private void ConfigureAccentPanels()
+        {
+            ConfigurePanel(panelCanvasAccentTop, new Point(438, 96), new Size(122, 5), Color.FromArgb(210, 230, 229), 2);
+            panelCanvasAccentTop.SendToBack();
+
+            ConfigurePanel(panelReportAccent, new Point(28, 22), new Size(64, 4), UiTheme.Accent, 2);
+            ConfigurePanel(panelReportRail, new Point(10, 54), new Size(3, 172), Color.FromArgb(230, 247, 244), 2);
+            ConfigurePanel(panelItemDot, new Point(7, 74), new Size(9, 9), UiTheme.Accent, 4);
+            ConfigurePanel(panelTypeDot, new Point(7, 230), new Size(9, 9), Color.FromArgb(63, 176, 165), 4);
+
+            ConfigurePanel(panelPhotoAccent, new Point(34, 22), new Size(112, 4), Color.FromArgb(63, 176, 165), 2);
+            ConfigurePanel(panelPhotoCornerTop, new Point(panelTips.Width - 112, panelTips.Height - 42), new Size(54, 4), Color.FromArgb(230, 247, 244), 2);
+            ConfigurePanel(panelPhotoCornerSide, new Point(panelTips.Width - 58, panelTips.Height - 80), new Size(4, 42), Color.FromArgb(230, 247, 244), 2);
+            panelPhotoCornerTop.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            panelPhotoCornerSide.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+
+            ConfigurePanel(panelGridAccent, new Point(28, 24), new Size(96, 4), Color.FromArgb(235, 224, 207), 2);
+            panelReportAccent.BringToFront();
+            panelReportRail.BringToFront();
+            panelItemDot.BringToFront();
+            panelTypeDot.BringToFront();
+            panelPhotoAccent.BringToFront();
+            panelPhotoCornerTop.SendToBack();
+            panelPhotoCornerSide.SendToBack();
+            panelGridAccent.BringToFront();
+        }
+
         private void ConfigureSecurityLayout()
         {
             if (contentLayout == null)
@@ -280,9 +417,12 @@ namespace LostAndFound
                 return;
             }
 
-            contentLayout.Location = new Point(24, 104);
-            contentLayout.Size = new Size(Math.Max(1, ClientSize.Width - 48), Math.Max(1, ClientSize.Height - 128));
+            contentLayout.Location = new Point(24, 146);
+            contentLayout.Size = new Size(Math.Max(1, ClientSize.Width - 48), Math.Max(1, ClientSize.Height - 170));
             contentLayout.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelCanvasAccentTop.Location = new Point(
+                contentLayout.Left + Math.Max(360, contentLayout.Width / 3),
+                Math.Max(58, contentLayout.Top - 50));
             LayoutReportPanel();
             LayoutCameraPanel();
             LayoutClaimToolbar();
@@ -296,9 +436,6 @@ namespace LostAndFound
             SetControlHidden(lblPhotoSubtitle);
             SetControlHidden(lblRecentTitle);
             SetControlHidden(lblRecentSubtitle);
-            HideChildControl(panelReport, "panelReportAccent");
-            HideChildControl(panelTips, "panelPhotoAccent");
-            HideChildControl(panelGrid, "panelGridAccent");
         }
 
         private void SetControlHidden(Control control)
@@ -794,11 +931,11 @@ namespace LostAndFound
                     btnMarkLostReturned.Visible = false;
                 }
 
-                int rightSectionWidth = 390;
-                int photoX = Math.Max(620, width - rightSectionWidth);
+                int rightSectionWidth = 360;
+                int photoX = Math.Max(650, width - rightSectionWidth);
                 int buttonX = photoX + 82;
                 int nameX = 270;
-                int nameWidth = Math.Max(190, photoX - nameX - 22);
+                int nameWidth = Math.Max(170, photoX - nameX - 28);
 
                 lblStudentNim.Location = new Point(16, 13);
                 lblStudentNim.Size = new Size(42, 18);
@@ -818,8 +955,8 @@ namespace LostAndFound
                 btnUseCameraClaimPhoto.Size = new Size(144, 34);
                 btnSaveClaim.Location = new Point(buttonX, 46);
                 btnSaveClaim.Size = new Size(264, 28);
-                lblClaimRequestHint.Location = new Point(16, 50);
-                lblClaimRequestHint.Size = new Size(Math.Max(260, photoX - 34), 20);
+                lblClaimRequestHint.Location = new Point(16, 52);
+                lblClaimRequestHint.Size = new Size(Math.Max(260, photoX - 40), 20);
 
                 if (lblClaimPhotoStatus != null)
                 {

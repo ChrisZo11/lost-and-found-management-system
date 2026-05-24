@@ -19,7 +19,16 @@ namespace LostAndFound
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panelWindowChrome = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnWindowClose = new Guna.UI2.WinForms.Guna2Button();
+            this.btnWindowMaximize = new Guna.UI2.WinForms.Guna2Button();
+            this.btnWindowMinimize = new Guna.UI2.WinForms.Guna2Button();
+            this.lblWindowTitle = new System.Windows.Forms.Label();
+            this.panelWindowIcon = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelWindowDivider = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelCanvasAccentTop = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblSubtitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.panelUserBadge = new Guna.UI2.WinForms.Guna2Panel();
             this.lblUserBadge = new System.Windows.Forms.Label();
@@ -37,6 +46,10 @@ namespace LostAndFound
             this.lblStepMonitorNumber = new System.Windows.Forms.Label();
             this.panelStepMonitorMarker = new Guna.UI2.WinForms.Guna2Panel();
             this.panelReport = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.panelReportAccent = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelReportRail = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelItemDot = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelTypeDot = new Guna.UI2.WinForms.Guna2Panel();
             this.lblType = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblReportSubtitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblReportTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -50,6 +63,9 @@ namespace LostAndFound
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtItemName = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelTips = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.panelPhotoAccent = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelPhotoCornerTop = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelPhotoCornerSide = new Guna.UI2.WinForms.Guna2Panel();
             this.lblCameraStatus = new System.Windows.Forms.Label();
             this.btnRetakePhoto = new Guna.UI2.WinForms.Guna2Button();
             this.btnCapturePhoto = new Guna.UI2.WinForms.Guna2Button();
@@ -60,6 +76,7 @@ namespace LostAndFound
             this.lblPhotoSubtitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblPhotoTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelGrid = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.panelGridAccent = new Guna.UI2.WinForms.Guna2Panel();
             this.btnShowFoundItems = new Guna.UI2.WinForms.Guna2Button();
             this.btnShowLostItems = new Guna.UI2.WinForms.Guna2Button();
             this.lblRecentSubtitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -77,6 +94,7 @@ namespace LostAndFound
             this.btnMarkLostReturned = new Guna.UI2.WinForms.Guna2Button();
             this.lblClaimRequestHint = new System.Windows.Forms.Label();
             this.dgvItems = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.panelWindowChrome.SuspendLayout();
             this.panelUserBadge.SuspendLayout();
             this.panelStepReport.SuspendLayout();
             this.panelStepPhoto.SuspendLayout();
@@ -90,16 +108,134 @@ namespace LostAndFound
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             //
+            // panelWindowChrome
+            //
+            this.panelWindowChrome.Controls.Add(this.btnWindowClose);
+            this.panelWindowChrome.Controls.Add(this.btnWindowMaximize);
+            this.panelWindowChrome.Controls.Add(this.btnWindowMinimize);
+            this.panelWindowChrome.Controls.Add(this.lblWindowTitle);
+            this.panelWindowChrome.Controls.Add(this.panelWindowIcon);
+            this.panelWindowChrome.Controls.Add(this.panelWindowDivider);
+            this.panelWindowChrome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelWindowChrome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.panelWindowChrome.Location = new System.Drawing.Point(0, 0);
+            this.panelWindowChrome.Name = "panelWindowChrome";
+            this.panelWindowChrome.Size = new System.Drawing.Size(1220, 42);
+            this.panelWindowChrome.TabIndex = 10;
+            //
+            // btnWindowClose
+            //
+            this.btnWindowClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnWindowClose.Animated = true;
+            this.btnWindowClose.BorderRadius = 8;
+            this.btnWindowClose.FillColor = System.Drawing.Color.Transparent;
+            this.btnWindowClose.Font = new System.Drawing.Font("Segoe UI Variable Text", 10F, System.Drawing.FontStyle.Bold);
+            this.btnWindowClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
+            this.btnWindowClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(59)))), ((int)(((byte)(74)))));
+            this.btnWindowClose.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnWindowClose.Location = new System.Drawing.Point(1178, 4);
+            this.btnWindowClose.Name = "btnWindowClose";
+            this.btnWindowClose.Size = new System.Drawing.Size(34, 30);
+            this.btnWindowClose.TabIndex = 3;
+            this.btnWindowClose.Text = "x";
+            this.btnWindowClose.TextOffset = new System.Drawing.Point(0, -1);
+            //
+            // btnWindowMaximize
+            //
+            this.btnWindowMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnWindowMaximize.Animated = true;
+            this.btnWindowMaximize.BorderRadius = 8;
+            this.btnWindowMaximize.FillColor = System.Drawing.Color.Transparent;
+            this.btnWindowMaximize.Font = new System.Drawing.Font("Segoe UI Variable Text", 10F, System.Drawing.FontStyle.Bold);
+            this.btnWindowMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
+            this.btnWindowMaximize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
+            this.btnWindowMaximize.Location = new System.Drawing.Point(1136, 4);
+            this.btnWindowMaximize.Name = "btnWindowMaximize";
+            this.btnWindowMaximize.Size = new System.Drawing.Size(34, 30);
+            this.btnWindowMaximize.TabIndex = 2;
+            this.btnWindowMaximize.Text = "□";
+            this.btnWindowMaximize.TextOffset = new System.Drawing.Point(0, -1);
+            //
+            // btnWindowMinimize
+            //
+            this.btnWindowMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnWindowMinimize.Animated = true;
+            this.btnWindowMinimize.BorderRadius = 8;
+            this.btnWindowMinimize.FillColor = System.Drawing.Color.Transparent;
+            this.btnWindowMinimize.Font = new System.Drawing.Font("Segoe UI Variable Text", 10F, System.Drawing.FontStyle.Bold);
+            this.btnWindowMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
+            this.btnWindowMinimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
+            this.btnWindowMinimize.Location = new System.Drawing.Point(1094, 4);
+            this.btnWindowMinimize.Name = "btnWindowMinimize";
+            this.btnWindowMinimize.Size = new System.Drawing.Size(34, 30);
+            this.btnWindowMinimize.TabIndex = 1;
+            this.btnWindowMinimize.Text = "-";
+            this.btnWindowMinimize.TextOffset = new System.Drawing.Point(0, -1);
+            //
+            // lblWindowTitle
+            //
+            this.lblWindowTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblWindowTitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
+            this.lblWindowTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
+            this.lblWindowTitle.Location = new System.Drawing.Point(42, 12);
+            this.lblWindowTitle.Name = "lblWindowTitle";
+            this.lblWindowTitle.Size = new System.Drawing.Size(160, 18);
+            this.lblWindowTitle.TabIndex = 1;
+            this.lblWindowTitle.Text = "Lost & Found";
+            //
+            // panelWindowIcon
+            //
+            this.panelWindowIcon.BackColor = System.Drawing.Color.Transparent;
+            this.panelWindowIcon.BorderRadius = 3;
+            this.panelWindowIcon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(161)))), ((int)(((byte)(38)))));
+            this.panelWindowIcon.Location = new System.Drawing.Point(24, 16);
+            this.panelWindowIcon.Name = "panelWindowIcon";
+            this.panelWindowIcon.Size = new System.Drawing.Size(10, 10);
+            this.panelWindowIcon.TabIndex = 0;
+            //
+            // panelWindowDivider
+            //
+            this.panelWindowDivider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelWindowDivider.BackColor = System.Drawing.Color.Transparent;
+            this.panelWindowDivider.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(232)))), ((int)(((byte)(238)))));
+            this.panelWindowDivider.Location = new System.Drawing.Point(0, 41);
+            this.panelWindowDivider.Name = "panelWindowDivider";
+            this.panelWindowDivider.Size = new System.Drawing.Size(1220, 1);
+            this.panelWindowDivider.TabIndex = 4;
+            //
+            // panelCanvasAccentTop
+            //
+            this.panelCanvasAccentTop.BackColor = System.Drawing.Color.Transparent;
+            this.panelCanvasAccentTop.BorderRadius = 2;
+            this.panelCanvasAccentTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(230)))), ((int)(((byte)(229)))));
+            this.panelCanvasAccentTop.Location = new System.Drawing.Point(438, 96);
+            this.panelCanvasAccentTop.Name = "panelCanvasAccentTop";
+            this.panelCanvasAccentTop.Size = new System.Drawing.Size(122, 5);
+            this.panelCanvasAccentTop.TabIndex = 11;
+            //
             // lblTitle
             //
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 20F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
-            this.lblTitle.Location = new System.Drawing.Point(32, 24);
+            this.lblTitle.Location = new System.Drawing.Point(32, 66);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(291, 38);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Dashboard Security";
+            //
+            // lblSubtitle
+            //
+            this.lblSubtitle.AutoSize = false;
+            this.lblSubtitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
+            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
+            this.lblSubtitle.Location = new System.Drawing.Point(34, 103);
+            this.lblSubtitle.Name = "lblSubtitle";
+            this.lblSubtitle.Size = new System.Drawing.Size(340, 20);
+            this.lblSubtitle.TabIndex = 1;
+            this.lblSubtitle.Text = "Catat laporan, ambil foto, dan proses klaim item aktif";
             //
             // btnLogout
             //
@@ -110,7 +246,7 @@ namespace LostAndFound
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
             this.btnLogout.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(249)))), ((int)(((byte)(244)))));
-            this.btnLogout.Location = new System.Drawing.Point(1104, 30);
+            this.btnLogout.Location = new System.Drawing.Point(1104, 72);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(92, 36);
             this.btnLogout.TabIndex = 2;
@@ -126,7 +262,7 @@ namespace LostAndFound
             this.panelUserBadge.Controls.Add(this.lblUserBadge);
             this.panelUserBadge.Controls.Add(this.panelUserBadgeMarker);
             this.panelUserBadge.FillColor = System.Drawing.Color.White;
-            this.panelUserBadge.Location = new System.Drawing.Point(852, 30);
+            this.panelUserBadge.Location = new System.Drawing.Point(852, 72);
             this.panelUserBadge.Name = "panelUserBadge";
             this.panelUserBadge.Size = new System.Drawing.Size(232, 36);
             this.panelUserBadge.TabIndex = 6;
@@ -298,6 +434,10 @@ namespace LostAndFound
             // panelReport
             //
             this.panelReport.BackColor = System.Drawing.Color.Transparent;
+            this.panelReport.Controls.Add(this.panelReportAccent);
+            this.panelReport.Controls.Add(this.panelReportRail);
+            this.panelReport.Controls.Add(this.panelItemDot);
+            this.panelReport.Controls.Add(this.panelTypeDot);
             this.panelReport.Controls.Add(this.lblType);
             this.panelReport.Controls.Add(this.lblReportSubtitle);
             this.panelReport.Controls.Add(this.lblReportTitle);
@@ -311,14 +451,54 @@ namespace LostAndFound
             this.panelReport.Controls.Add(this.txtDescription);
             this.panelReport.Controls.Add(this.txtItemName);
             this.panelReport.FillColor = System.Drawing.Color.White;
-            this.panelReport.Location = new System.Drawing.Point(24, 116);
+            this.panelReport.Location = new System.Drawing.Point(24, 146);
             this.panelReport.Name = "panelReport";
-            this.panelReport.Radius = 12;
-            this.panelReport.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.panelReport.ShadowDepth = 0;
-            this.panelReport.ShadowShift = 0;
+            this.panelReport.Radius = 16;
+            this.panelReport.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(222)))), ((int)(((byte)(230)))));
+            this.panelReport.ShadowDepth = 4;
+            this.panelReport.ShadowShift = 2;
             this.panelReport.Size = new System.Drawing.Size(500, 338);
             this.panelReport.TabIndex = 3;
+            //
+            // panelReportAccent
+            //
+            this.panelReportAccent.BackColor = System.Drawing.Color.Transparent;
+            this.panelReportAccent.BorderRadius = 2;
+            this.panelReportAccent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(161)))), ((int)(((byte)(38)))));
+            this.panelReportAccent.Location = new System.Drawing.Point(28, 22);
+            this.panelReportAccent.Name = "panelReportAccent";
+            this.panelReportAccent.Size = new System.Drawing.Size(64, 4);
+            this.panelReportAccent.TabIndex = 11;
+            //
+            // panelReportRail
+            //
+            this.panelReportRail.BackColor = System.Drawing.Color.Transparent;
+            this.panelReportRail.BorderRadius = 2;
+            this.panelReportRail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(247)))), ((int)(((byte)(244)))));
+            this.panelReportRail.Location = new System.Drawing.Point(10, 54);
+            this.panelReportRail.Name = "panelReportRail";
+            this.panelReportRail.Size = new System.Drawing.Size(3, 172);
+            this.panelReportRail.TabIndex = 12;
+            //
+            // panelItemDot
+            //
+            this.panelItemDot.BackColor = System.Drawing.Color.Transparent;
+            this.panelItemDot.BorderRadius = 4;
+            this.panelItemDot.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(161)))), ((int)(((byte)(38)))));
+            this.panelItemDot.Location = new System.Drawing.Point(7, 74);
+            this.panelItemDot.Name = "panelItemDot";
+            this.panelItemDot.Size = new System.Drawing.Size(9, 9);
+            this.panelItemDot.TabIndex = 13;
+            //
+            // panelTypeDot
+            //
+            this.panelTypeDot.BackColor = System.Drawing.Color.Transparent;
+            this.panelTypeDot.BorderRadius = 4;
+            this.panelTypeDot.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(176)))), ((int)(((byte)(165)))));
+            this.panelTypeDot.Location = new System.Drawing.Point(7, 230);
+            this.panelTypeDot.Name = "panelTypeDot";
+            this.panelTypeDot.Size = new System.Drawing.Size(9, 9);
+            this.panelTypeDot.TabIndex = 14;
             //
             // lblType
             //
@@ -493,6 +673,9 @@ namespace LostAndFound
             // panelTips
             //
             this.panelTips.BackColor = System.Drawing.Color.Transparent;
+            this.panelTips.Controls.Add(this.panelPhotoAccent);
+            this.panelTips.Controls.Add(this.panelPhotoCornerTop);
+            this.panelTips.Controls.Add(this.panelPhotoCornerSide);
             this.panelTips.Controls.Add(this.lblCameraStatus);
             this.panelTips.Controls.Add(this.btnRetakePhoto);
             this.panelTips.Controls.Add(this.btnCapturePhoto);
@@ -503,14 +686,46 @@ namespace LostAndFound
             this.panelTips.Controls.Add(this.lblPhotoSubtitle);
             this.panelTips.Controls.Add(this.lblPhotoTitle);
             this.panelTips.FillColor = System.Drawing.Color.White;
-            this.panelTips.Location = new System.Drawing.Point(546, 116);
+            this.panelTips.Location = new System.Drawing.Point(546, 146);
             this.panelTips.Name = "panelTips";
-            this.panelTips.Radius = 12;
-            this.panelTips.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.panelTips.ShadowDepth = 0;
-            this.panelTips.ShadowShift = 0;
+            this.panelTips.Radius = 16;
+            this.panelTips.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(222)))), ((int)(((byte)(230)))));
+            this.panelTips.ShadowDepth = 4;
+            this.panelTips.ShadowShift = 2;
             this.panelTips.Size = new System.Drawing.Size(650, 338);
             this.panelTips.TabIndex = 4;
+            //
+            // panelPhotoAccent
+            //
+            this.panelPhotoAccent.BackColor = System.Drawing.Color.Transparent;
+            this.panelPhotoAccent.BorderRadius = 2;
+            this.panelPhotoAccent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(176)))), ((int)(((byte)(165)))));
+            this.panelPhotoAccent.Location = new System.Drawing.Point(34, 22);
+            this.panelPhotoAccent.Name = "panelPhotoAccent";
+            this.panelPhotoAccent.Size = new System.Drawing.Size(112, 4);
+            this.panelPhotoAccent.TabIndex = 9;
+            //
+            // panelPhotoCornerTop
+            //
+            this.panelPhotoCornerTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelPhotoCornerTop.BackColor = System.Drawing.Color.Transparent;
+            this.panelPhotoCornerTop.BorderRadius = 2;
+            this.panelPhotoCornerTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(247)))), ((int)(((byte)(244)))));
+            this.panelPhotoCornerTop.Location = new System.Drawing.Point(538, 296);
+            this.panelPhotoCornerTop.Name = "panelPhotoCornerTop";
+            this.panelPhotoCornerTop.Size = new System.Drawing.Size(54, 4);
+            this.panelPhotoCornerTop.TabIndex = 10;
+            //
+            // panelPhotoCornerSide
+            //
+            this.panelPhotoCornerSide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelPhotoCornerSide.BackColor = System.Drawing.Color.Transparent;
+            this.panelPhotoCornerSide.BorderRadius = 2;
+            this.panelPhotoCornerSide.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(247)))), ((int)(((byte)(244)))));
+            this.panelPhotoCornerSide.Location = new System.Drawing.Point(592, 258);
+            this.panelPhotoCornerSide.Name = "panelPhotoCornerSide";
+            this.panelPhotoCornerSide.Size = new System.Drawing.Size(4, 42);
+            this.panelPhotoCornerSide.TabIndex = 11;
             //
             // lblCameraStatus
             //
@@ -641,6 +856,7 @@ namespace LostAndFound
             // panelGrid
             //
             this.panelGrid.BackColor = System.Drawing.Color.Transparent;
+            this.panelGrid.Controls.Add(this.panelGridAccent);
             this.panelGrid.Controls.Add(this.btnShowLostItems);
             this.panelGrid.Controls.Add(this.btnShowFoundItems);
             this.panelGrid.Controls.Add(this.lblRecentSubtitle);
@@ -648,14 +864,24 @@ namespace LostAndFound
             this.panelGrid.Controls.Add(this.panelClaimToolbar);
             this.panelGrid.Controls.Add(this.dgvItems);
             this.panelGrid.FillColor = System.Drawing.Color.White;
-            this.panelGrid.Location = new System.Drawing.Point(24, 460);
+            this.panelGrid.Location = new System.Drawing.Point(24, 490);
             this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Radius = 12;
-            this.panelGrid.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.panelGrid.ShadowDepth = 0;
-            this.panelGrid.ShadowShift = 0;
+            this.panelGrid.Radius = 16;
+            this.panelGrid.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(222)))), ((int)(((byte)(230)))));
+            this.panelGrid.ShadowDepth = 4;
+            this.panelGrid.ShadowShift = 2;
             this.panelGrid.Size = new System.Drawing.Size(1172, 316);
             this.panelGrid.TabIndex = 5;
+            //
+            // panelGridAccent
+            //
+            this.panelGridAccent.BackColor = System.Drawing.Color.Transparent;
+            this.panelGridAccent.BorderRadius = 2;
+            this.panelGridAccent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
+            this.panelGridAccent.Location = new System.Drawing.Point(28, 24);
+            this.panelGridAccent.Name = "panelGridAccent";
+            this.panelGridAccent.Size = new System.Drawing.Size(96, 4);
+            this.panelGridAccent.TabIndex = 6;
             //
             // btnShowFoundItems
             //
@@ -794,7 +1020,7 @@ namespace LostAndFound
             this.picClaimPhoto.BorderRadius = 10;
             this.picClaimPhoto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
             this.picClaimPhoto.ImageRotate = 0F;
-            this.picClaimPhoto.Location = new System.Drawing.Point(726, 8);
+            this.picClaimPhoto.Location = new System.Drawing.Point(756, 8);
             this.picClaimPhoto.Name = "picClaimPhoto";
             this.picClaimPhoto.Size = new System.Drawing.Size(62, 62);
             this.picClaimPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -807,7 +1033,7 @@ namespace LostAndFound
             this.lblClaimPhotoStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblClaimPhotoStatus.Font = new System.Drawing.Font("Segoe UI Variable Text", 7.5F, System.Drawing.FontStyle.Bold);
             this.lblClaimPhotoStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
-            this.lblClaimPhotoStatus.Location = new System.Drawing.Point(730, 31);
+            this.lblClaimPhotoStatus.Location = new System.Drawing.Point(760, 31);
             this.lblClaimPhotoStatus.Name = "lblClaimPhotoStatus";
             this.lblClaimPhotoStatus.Size = new System.Drawing.Size(58, 20);
             this.lblClaimPhotoStatus.TabIndex = 5;
@@ -823,7 +1049,7 @@ namespace LostAndFound
             this.btnUploadClaimPhoto.FillColor = System.Drawing.Color.White;
             this.btnUploadClaimPhoto.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnUploadClaimPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
-            this.btnUploadClaimPhoto.Location = new System.Drawing.Point(808, 8);
+            this.btnUploadClaimPhoto.Location = new System.Drawing.Point(838, 8);
             this.btnUploadClaimPhoto.Name = "btnUploadClaimPhoto";
             this.btnUploadClaimPhoto.Size = new System.Drawing.Size(112, 34);
             this.btnUploadClaimPhoto.TabIndex = 6;
@@ -838,7 +1064,7 @@ namespace LostAndFound
             this.btnUseCameraClaimPhoto.FillColor = System.Drawing.Color.White;
             this.btnUseCameraClaimPhoto.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnUseCameraClaimPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
-            this.btnUseCameraClaimPhoto.Location = new System.Drawing.Point(928, 8);
+            this.btnUseCameraClaimPhoto.Location = new System.Drawing.Point(958, 8);
             this.btnUseCameraClaimPhoto.Name = "btnUseCameraClaimPhoto";
             this.btnUseCameraClaimPhoto.Size = new System.Drawing.Size(144, 34);
             this.btnUseCameraClaimPhoto.TabIndex = 7;
@@ -852,7 +1078,7 @@ namespace LostAndFound
             this.btnSaveClaim.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(177)))), ((int)(((byte)(191)))));
             this.btnSaveClaim.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnSaveClaim.ForeColor = System.Drawing.Color.White;
-            this.btnSaveClaim.Location = new System.Drawing.Point(808, 46);
+            this.btnSaveClaim.Location = new System.Drawing.Point(838, 46);
             this.btnSaveClaim.Name = "btnSaveClaim";
             this.btnSaveClaim.Size = new System.Drawing.Size(264, 28);
             this.btnSaveClaim.TabIndex = 8;
@@ -950,16 +1176,23 @@ namespace LostAndFound
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1220, 800);
+            this.Controls.Add(this.panelCanvasAccentTop);
             this.Controls.Add(this.panelGrid);
             this.Controls.Add(this.panelTips);
             this.Controls.Add(this.panelReport);
             this.Controls.Add(this.panelUserBadge);
             this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.lblSubtitle);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.panelWindowChrome);
             this.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
             this.Name = "SecurityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Konsol Security - Lost and Found";
+            this.panelWindowChrome.ResumeLayout(false);
             this.panelUserBadge.ResumeLayout(false);
             this.panelStepReport.ResumeLayout(false);
             this.panelStepPhoto.ResumeLayout(false);
@@ -981,7 +1214,16 @@ namespace LostAndFound
         }
 
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblSubtitle;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
+        private Guna.UI2.WinForms.Guna2Panel panelWindowChrome;
+        private Guna.UI2.WinForms.Guna2Panel panelWindowIcon;
+        private System.Windows.Forms.Label lblWindowTitle;
+        private Guna.UI2.WinForms.Guna2Button btnWindowMinimize;
+        private Guna.UI2.WinForms.Guna2Button btnWindowMaximize;
+        private Guna.UI2.WinForms.Guna2Button btnWindowClose;
+        private Guna.UI2.WinForms.Guna2Panel panelWindowDivider;
+        private Guna.UI2.WinForms.Guna2Panel panelCanvasAccentTop;
         private Guna.UI2.WinForms.Guna2Panel panelUserBadge;
         private Guna.UI2.WinForms.Guna2Panel panelUserBadgeMarker;
         private System.Windows.Forms.Label lblUserBadge;
@@ -998,8 +1240,16 @@ namespace LostAndFound
         private System.Windows.Forms.Label lblStepMonitorNumber;
         private System.Windows.Forms.Label lblStepMonitorText;
         private Guna.UI2.WinForms.Guna2ShadowPanel panelReport;
+        private Guna.UI2.WinForms.Guna2Panel panelReportAccent;
+        private Guna.UI2.WinForms.Guna2Panel panelReportRail;
+        private Guna.UI2.WinForms.Guna2Panel panelItemDot;
+        private Guna.UI2.WinForms.Guna2Panel panelTypeDot;
         private Guna.UI2.WinForms.Guna2ShadowPanel panelTips;
+        private Guna.UI2.WinForms.Guna2Panel panelPhotoAccent;
+        private Guna.UI2.WinForms.Guna2Panel panelPhotoCornerTop;
+        private Guna.UI2.WinForms.Guna2Panel panelPhotoCornerSide;
         private Guna.UI2.WinForms.Guna2ShadowPanel panelGrid;
+        private Guna.UI2.WinForms.Guna2Panel panelGridAccent;
         private Guna.UI2.WinForms.Guna2TextBox txtItemName;
         private Guna.UI2.WinForms.Guna2TextBox txtDescription;
         private Guna.UI2.WinForms.Guna2TextBox txtLocation;

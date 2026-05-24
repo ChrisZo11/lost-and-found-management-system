@@ -52,7 +52,7 @@ namespace LostAndFound
             // 
             this.lblTitle.AutoEllipsis = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("JetBrains Mono", 13F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 13F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             this.lblTitle.Location = new System.Drawing.Point(24, 14);
             this.lblTitle.Name = "lblTitle";
@@ -63,7 +63,7 @@ namespace LostAndFound
             // lblSubtitle
             // 
             this.lblSubtitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblSubtitle.Font = new System.Drawing.Font("JetBrains Mono", 8.5F);
+            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.5F);
             this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
             this.lblSubtitle.Location = new System.Drawing.Point(24, 40);
             this.lblSubtitle.Name = "lblSubtitle";
@@ -91,7 +91,7 @@ namespace LostAndFound
             // lblZoom
             // 
             this.lblZoom.BackColor = System.Drawing.Color.Transparent;
-            this.lblZoom.Font = new System.Drawing.Font("JetBrains Mono", 8.8F, System.Drawing.FontStyle.Bold);
+            this.lblZoom.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.8F, System.Drawing.FontStyle.Bold);
             this.lblZoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
             this.lblZoom.Location = new System.Drawing.Point(0, 7);
             this.lblZoom.Margin = new System.Windows.Forms.Padding(0, 7, 8, 0);
@@ -107,7 +107,7 @@ namespace LostAndFound
             this.btnZoomOut.BorderRadius = 8;
             this.btnZoomOut.BorderThickness = 1;
             this.btnZoomOut.FillColor = System.Drawing.Color.White;
-            this.btnZoomOut.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnZoomOut.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnZoomOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
             this.btnZoomOut.Location = new System.Drawing.Point(62, 0);
             this.btnZoomOut.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
@@ -122,7 +122,7 @@ namespace LostAndFound
             this.btnFit.BorderRadius = 8;
             this.btnFit.BorderThickness = 1;
             this.btnFit.FillColor = System.Drawing.Color.White;
-            this.btnFit.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnFit.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnFit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
             this.btnFit.Location = new System.Drawing.Point(148, 0);
             this.btnFit.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
@@ -137,7 +137,7 @@ namespace LostAndFound
             this.btnActual.BorderRadius = 8;
             this.btnActual.BorderThickness = 1;
             this.btnActual.FillColor = System.Drawing.Color.White;
-            this.btnActual.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnActual.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
             this.btnActual.Location = new System.Drawing.Point(212, 0);
             this.btnActual.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
@@ -152,7 +152,7 @@ namespace LostAndFound
             this.btnZoomIn.BorderRadius = 8;
             this.btnZoomIn.BorderThickness = 1;
             this.btnZoomIn.FillColor = System.Drawing.Color.White;
-            this.btnZoomIn.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnZoomIn.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnZoomIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
             this.btnZoomIn.Location = new System.Drawing.Point(280, 0);
             this.btnZoomIn.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
@@ -167,7 +167,7 @@ namespace LostAndFound
             this.btnClose.BorderRadius = 8;
             this.btnClose.BorderThickness = 1;
             this.btnClose.FillColor = System.Drawing.Color.White;
-            this.btnClose.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
             this.btnClose.Location = new System.Drawing.Point(370, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
@@ -206,7 +206,7 @@ namespace LostAndFound
             this.ClientSize = new System.Drawing.Size(880, 620);
             this.Controls.Add(this.viewport);
             this.Controls.Add(this.headerPanel);
-            this.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(720, 520);
             this.Name = "ImageZoomForm";

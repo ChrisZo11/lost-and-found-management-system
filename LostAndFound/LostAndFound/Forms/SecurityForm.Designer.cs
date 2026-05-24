@@ -1,4 +1,4 @@
-﻿namespace LostAndFound
+namespace LostAndFound
 {
     partial class SecurityForm
     {
@@ -93,7 +93,7 @@
             // lblTitle
             //
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("JetBrains Mono", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 20F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             this.lblTitle.Location = new System.Drawing.Point(32, 24);
             this.lblTitle.Name = "lblTitle";
@@ -107,7 +107,7 @@
             this.btnLogout.BorderRadius = 8;
             this.btnLogout.BorderThickness = 1;
             this.btnLogout.FillColor = System.Drawing.Color.White;
-            this.btnLogout.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
             this.btnLogout.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(249)))), ((int)(((byte)(244)))));
             this.btnLogout.Location = new System.Drawing.Point(1104, 30);
@@ -135,7 +135,7 @@
             //
             this.lblUserBadge.BackColor = System.Drawing.Color.Transparent;
             this.lblUserBadge.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUserBadge.Font = new System.Drawing.Font("JetBrains Mono", 8.8F, System.Drawing.FontStyle.Bold);
+            this.lblUserBadge.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.8F, System.Drawing.FontStyle.Bold);
             this.lblUserBadge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
             this.lblUserBadge.Location = new System.Drawing.Point(0, 0);
             this.lblUserBadge.Name = "lblUserBadge";
@@ -171,7 +171,7 @@
             // lblStepReportText
             //
             this.lblStepReportText.BackColor = System.Drawing.Color.Transparent;
-            this.lblStepReportText.Font = new System.Drawing.Font("JetBrains Mono", 7.8F);
+            this.lblStepReportText.Font = new System.Drawing.Font("Segoe UI Variable Text", 7.8F);
             this.lblStepReportText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
             this.lblStepReportText.Location = new System.Drawing.Point(12, 30);
             this.lblStepReportText.Name = "lblStepReportText";
@@ -183,7 +183,7 @@
             // lblStepReportNumber
             //
             this.lblStepReportNumber.BackColor = System.Drawing.Color.Transparent;
-            this.lblStepReportNumber.Font = new System.Drawing.Font("JetBrains Mono", 8F, System.Drawing.FontStyle.Bold);
+            this.lblStepReportNumber.Font = new System.Drawing.Font("Segoe UI Variable Text", 8F, System.Drawing.FontStyle.Bold);
             this.lblStepReportNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             this.lblStepReportNumber.Location = new System.Drawing.Point(27, 6);
             this.lblStepReportNumber.Name = "lblStepReportNumber";
@@ -218,7 +218,7 @@
             // lblStepPhotoText
             //
             this.lblStepPhotoText.BackColor = System.Drawing.Color.Transparent;
-            this.lblStepPhotoText.Font = new System.Drawing.Font("JetBrains Mono", 7.8F);
+            this.lblStepPhotoText.Font = new System.Drawing.Font("Segoe UI Variable Text", 7.8F);
             this.lblStepPhotoText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
             this.lblStepPhotoText.Location = new System.Drawing.Point(12, 30);
             this.lblStepPhotoText.Name = "lblStepPhotoText";
@@ -230,7 +230,7 @@
             // lblStepPhotoNumber
             //
             this.lblStepPhotoNumber.BackColor = System.Drawing.Color.Transparent;
-            this.lblStepPhotoNumber.Font = new System.Drawing.Font("JetBrains Mono", 8F, System.Drawing.FontStyle.Bold);
+            this.lblStepPhotoNumber.Font = new System.Drawing.Font("Segoe UI Variable Text", 8F, System.Drawing.FontStyle.Bold);
             this.lblStepPhotoNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             this.lblStepPhotoNumber.Location = new System.Drawing.Point(27, 6);
             this.lblStepPhotoNumber.Name = "lblStepPhotoNumber";
@@ -265,7 +265,7 @@
             // lblStepMonitorText
             //
             this.lblStepMonitorText.BackColor = System.Drawing.Color.Transparent;
-            this.lblStepMonitorText.Font = new System.Drawing.Font("JetBrains Mono", 7.8F);
+            this.lblStepMonitorText.Font = new System.Drawing.Font("Segoe UI Variable Text", 7.8F);
             this.lblStepMonitorText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
             this.lblStepMonitorText.Location = new System.Drawing.Point(12, 30);
             this.lblStepMonitorText.Name = "lblStepMonitorText";
@@ -277,7 +277,7 @@
             // lblStepMonitorNumber
             //
             this.lblStepMonitorNumber.BackColor = System.Drawing.Color.Transparent;
-            this.lblStepMonitorNumber.Font = new System.Drawing.Font("JetBrains Mono", 8F, System.Drawing.FontStyle.Bold);
+            this.lblStepMonitorNumber.Font = new System.Drawing.Font("Segoe UI Variable Text", 8F, System.Drawing.FontStyle.Bold);
             this.lblStepMonitorNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             this.lblStepMonitorNumber.Location = new System.Drawing.Point(27, 6);
             this.lblStepMonitorNumber.Name = "lblStepMonitorNumber";
@@ -323,7 +323,7 @@
             // lblType
             //
             this.lblType.BackColor = System.Drawing.Color.Transparent;
-            this.lblType.Font = new System.Drawing.Font("JetBrains Mono", 9.3F, System.Drawing.FontStyle.Bold);
+            this.lblType.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.3F, System.Drawing.FontStyle.Bold);
             this.lblType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
             this.lblType.Location = new System.Drawing.Point(28, 210);
             this.lblType.Name = "lblType";
@@ -334,7 +334,7 @@
             // lblReportSubtitle
             //
             this.lblReportSubtitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblReportSubtitle.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.lblReportSubtitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.lblReportSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
             this.lblReportSubtitle.Location = new System.Drawing.Point(28, 43);
             this.lblReportSubtitle.Name = "lblReportSubtitle";
@@ -346,7 +346,7 @@
             // lblReportTitle
             //
             this.lblReportTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblReportTitle.Font = new System.Drawing.Font("JetBrains Mono", 14F, System.Drawing.FontStyle.Bold);
+            this.lblReportTitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 14F, System.Drawing.FontStyle.Bold);
             this.lblReportTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             this.lblReportTitle.Location = new System.Drawing.Point(28, 18);
             this.lblReportTitle.Name = "lblReportTitle";
@@ -359,7 +359,7 @@
             //
             this.btnSave.BorderRadius = 8;
             this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(139)))));
-            this.btnSave.Font = new System.Drawing.Font("JetBrains Mono", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.5F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(117)))));
             this.btnSave.Location = new System.Drawing.Point(28, 238);
@@ -376,7 +376,7 @@
             this.rbLost.CheckedState.BorderThickness = 0;
             this.rbLost.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.rbLost.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbLost.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.rbLost.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.rbLost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
             this.rbLost.Location = new System.Drawing.Point(198, 207);
             this.rbLost.Name = "rbLost";
@@ -396,7 +396,7 @@
             this.rbFound.CheckedState.BorderThickness = 0;
             this.rbFound.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
             this.rbFound.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbFound.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.rbFound.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.rbFound.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
             this.rbFound.Location = new System.Drawing.Point(94, 207);
             this.rbFound.Name = "rbFound";
@@ -412,7 +412,7 @@
             // lblLoc
             //
             this.lblLoc.BackColor = System.Drawing.Color.Transparent;
-            this.lblLoc.Font = new System.Drawing.Font("JetBrains Mono", 9.3F, System.Drawing.FontStyle.Bold);
+            this.lblLoc.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.3F, System.Drawing.FontStyle.Bold);
             this.lblLoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
             this.lblLoc.Location = new System.Drawing.Point(240, 24);
             this.lblLoc.Name = "lblLoc";
@@ -423,7 +423,7 @@
             // lblDesc
             //
             this.lblDesc.BackColor = System.Drawing.Color.Transparent;
-            this.lblDesc.Font = new System.Drawing.Font("JetBrains Mono", 9.3F, System.Drawing.FontStyle.Bold);
+            this.lblDesc.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.3F, System.Drawing.FontStyle.Bold);
             this.lblDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
             this.lblDesc.Location = new System.Drawing.Point(28, 104);
             this.lblDesc.Name = "lblDesc";
@@ -434,7 +434,7 @@
             // lblItemName
             //
             this.lblItemName.BackColor = System.Drawing.Color.Transparent;
-            this.lblItemName.Font = new System.Drawing.Font("JetBrains Mono", 9.3F, System.Drawing.FontStyle.Bold);
+            this.lblItemName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.3F, System.Drawing.FontStyle.Bold);
             this.lblItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
             this.lblItemName.Location = new System.Drawing.Point(28, 24);
             this.lblItemName.Name = "lblItemName";
@@ -448,7 +448,7 @@
             this.txtLocation.BorderRadius = 8;
             this.txtLocation.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLocation.DefaultText = "";
-            this.txtLocation.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.txtLocation.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.txtLocation.Location = new System.Drawing.Point(240, 48);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(158)))), ((int)(((byte)(179)))));
@@ -463,7 +463,7 @@
             this.txtDescription.BorderRadius = 8;
             this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDescription.DefaultText = "";
-            this.txtDescription.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.txtDescription.Location = new System.Drawing.Point(28, 128);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -480,7 +480,7 @@
             this.txtItemName.BorderRadius = 8;
             this.txtItemName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtItemName.DefaultText = "";
-            this.txtItemName.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.txtItemName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.txtItemName.Location = new System.Drawing.Point(28, 48);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(158)))), ((int)(((byte)(179)))));
@@ -515,7 +515,7 @@
             // lblCameraStatus
             //
             this.lblCameraStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblCameraStatus.Font = new System.Drawing.Font("JetBrains Mono", 8.7F);
+            this.lblCameraStatus.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.7F);
             this.lblCameraStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
             this.lblCameraStatus.Location = new System.Drawing.Point(444, 168);
             this.lblCameraStatus.Name = "lblCameraStatus";
@@ -529,7 +529,7 @@
             this.btnRetakePhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRetakePhoto.Enabled = false;
             this.btnRetakePhoto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(139)))));
-            this.btnRetakePhoto.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRetakePhoto.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnRetakePhoto.ForeColor = System.Drawing.Color.White;
             this.btnRetakePhoto.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(117)))));
             this.btnRetakePhoto.Location = new System.Drawing.Point(444, 120);
@@ -544,7 +544,7 @@
             this.btnCapturePhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCapturePhoto.Enabled = false;
             this.btnCapturePhoto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(139)))));
-            this.btnCapturePhoto.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCapturePhoto.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnCapturePhoto.ForeColor = System.Drawing.Color.White;
             this.btnCapturePhoto.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(117)))));
             this.btnCapturePhoto.Location = new System.Drawing.Point(444, 72);
@@ -560,7 +560,7 @@
             this.btnStopCamera.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnStopCamera.Enabled = false;
             this.btnStopCamera.FillColor = System.Drawing.Color.Red;
-            this.btnStopCamera.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnStopCamera.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnStopCamera.ForeColor = System.Drawing.Color.White;
             this.btnStopCamera.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.btnStopCamera.Location = new System.Drawing.Point(546, 28);
@@ -575,7 +575,7 @@
             this.btnStartCamera.BorderRadius = 8;
             this.btnStartCamera.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartCamera.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(139)))));
-            this.btnStartCamera.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnStartCamera.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnStartCamera.ForeColor = System.Drawing.Color.White;
             this.btnStartCamera.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(117)))));
             this.btnStartCamera.Location = new System.Drawing.Point(444, 28);
@@ -605,7 +605,7 @@
             this.cmbCamera.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbCamera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCamera.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbCamera.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.cmbCamera.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.cmbCamera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbCamera.FormattingEnabled = true;
             this.cmbCamera.ItemHeight = 30;
@@ -617,7 +617,7 @@
             // lblPhotoSubtitle
             //
             this.lblPhotoSubtitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblPhotoSubtitle.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.lblPhotoSubtitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.lblPhotoSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
             this.lblPhotoSubtitle.Location = new System.Drawing.Point(34, 52);
             this.lblPhotoSubtitle.Name = "lblPhotoSubtitle";
@@ -629,7 +629,7 @@
             // lblPhotoTitle
             //
             this.lblPhotoTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblPhotoTitle.Font = new System.Drawing.Font("JetBrains Mono", 14F, System.Drawing.FontStyle.Bold);
+            this.lblPhotoTitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 14F, System.Drawing.FontStyle.Bold);
             this.lblPhotoTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             this.lblPhotoTitle.Location = new System.Drawing.Point(34, 20);
             this.lblPhotoTitle.Name = "lblPhotoTitle";
@@ -661,7 +661,7 @@
             //
             this.btnShowFoundItems.BorderRadius = 8;
             this.btnShowFoundItems.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(139)))));
-            this.btnShowFoundItems.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnShowFoundItems.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnShowFoundItems.ForeColor = System.Drawing.Color.White;
             this.btnShowFoundItems.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(117)))));
             this.btnShowFoundItems.Location = new System.Drawing.Point(926, 20);
@@ -676,7 +676,7 @@
             this.btnShowLostItems.BorderRadius = 8;
             this.btnShowLostItems.BorderThickness = 1;
             this.btnShowLostItems.FillColor = System.Drawing.Color.White;
-            this.btnShowLostItems.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnShowLostItems.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnShowLostItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
             this.btnShowLostItems.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(249)))), ((int)(((byte)(244)))));
             this.btnShowLostItems.Location = new System.Drawing.Point(1048, 20);
@@ -688,7 +688,7 @@
             // lblRecentSubtitle
             //
             this.lblRecentSubtitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblRecentSubtitle.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.lblRecentSubtitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.lblRecentSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
             this.lblRecentSubtitle.Location = new System.Drawing.Point(28, 43);
             this.lblRecentSubtitle.Name = "lblRecentSubtitle";
@@ -700,7 +700,7 @@
             // lblRecentTitle
             //
             this.lblRecentTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblRecentTitle.Font = new System.Drawing.Font("JetBrains Mono", 14F, System.Drawing.FontStyle.Bold);
+            this.lblRecentTitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 14F, System.Drawing.FontStyle.Bold);
             this.lblRecentTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             this.lblRecentTitle.Location = new System.Drawing.Point(28, 18);
             this.lblRecentTitle.Name = "lblRecentTitle";
@@ -736,7 +736,7 @@
             // lblStudentNim
             //
             this.lblStudentNim.BackColor = System.Drawing.Color.Transparent;
-            this.lblStudentNim.Font = new System.Drawing.Font("JetBrains Mono", 9.3F, System.Drawing.FontStyle.Bold);
+            this.lblStudentNim.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.3F, System.Drawing.FontStyle.Bold);
             this.lblStudentNim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
             this.lblStudentNim.Location = new System.Drawing.Point(16, 13);
             this.lblStudentNim.Name = "lblStudentNim";
@@ -750,7 +750,7 @@
             this.txtStudentNim.BorderRadius = 8;
             this.txtStudentNim.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStudentNim.DefaultText = "";
-            this.txtStudentNim.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.txtStudentNim.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.txtStudentNim.Location = new System.Drawing.Point(58, 8);
             this.txtStudentNim.Name = "txtStudentNim";
             this.txtStudentNim.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(158)))), ((int)(((byte)(179)))));
@@ -762,7 +762,7 @@
             // lblStudentName
             //
             this.lblStudentName.BackColor = System.Drawing.Color.Transparent;
-            this.lblStudentName.Font = new System.Drawing.Font("JetBrains Mono", 9.3F, System.Drawing.FontStyle.Bold);
+            this.lblStudentName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.3F, System.Drawing.FontStyle.Bold);
             this.lblStudentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
             this.lblStudentName.Location = new System.Drawing.Point(226, 13);
             this.lblStudentName.Name = "lblStudentName";
@@ -778,7 +778,7 @@
             this.txtStudentName.BorderRadius = 8;
             this.txtStudentName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStudentName.DefaultText = "";
-            this.txtStudentName.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.txtStudentName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.txtStudentName.Location = new System.Drawing.Point(270, 8);
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(158)))), ((int)(((byte)(179)))));
@@ -805,7 +805,7 @@
             //
             this.lblClaimPhotoStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblClaimPhotoStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblClaimPhotoStatus.Font = new System.Drawing.Font("JetBrains Mono", 7.5F, System.Drawing.FontStyle.Bold);
+            this.lblClaimPhotoStatus.Font = new System.Drawing.Font("Segoe UI Variable Text", 7.5F, System.Drawing.FontStyle.Bold);
             this.lblClaimPhotoStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(130)))));
             this.lblClaimPhotoStatus.Location = new System.Drawing.Point(730, 31);
             this.lblClaimPhotoStatus.Name = "lblClaimPhotoStatus";
@@ -821,7 +821,7 @@
             this.btnUploadClaimPhoto.BorderRadius = 8;
             this.btnUploadClaimPhoto.BorderThickness = 1;
             this.btnUploadClaimPhoto.FillColor = System.Drawing.Color.White;
-            this.btnUploadClaimPhoto.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnUploadClaimPhoto.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnUploadClaimPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
             this.btnUploadClaimPhoto.Location = new System.Drawing.Point(808, 8);
             this.btnUploadClaimPhoto.Name = "btnUploadClaimPhoto";
@@ -836,7 +836,7 @@
             this.btnUseCameraClaimPhoto.BorderRadius = 8;
             this.btnUseCameraClaimPhoto.BorderThickness = 1;
             this.btnUseCameraClaimPhoto.FillColor = System.Drawing.Color.White;
-            this.btnUseCameraClaimPhoto.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnUseCameraClaimPhoto.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnUseCameraClaimPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(72)))), ((int)(((byte)(86)))));
             this.btnUseCameraClaimPhoto.Location = new System.Drawing.Point(928, 8);
             this.btnUseCameraClaimPhoto.Name = "btnUseCameraClaimPhoto";
@@ -850,7 +850,7 @@
             this.btnSaveClaim.BorderRadius = 8;
             this.btnSaveClaim.Enabled = false;
             this.btnSaveClaim.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(177)))), ((int)(((byte)(191)))));
-            this.btnSaveClaim.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSaveClaim.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnSaveClaim.ForeColor = System.Drawing.Color.White;
             this.btnSaveClaim.Location = new System.Drawing.Point(808, 46);
             this.btnSaveClaim.Name = "btnSaveClaim";
@@ -862,7 +862,7 @@
             //
             this.btnMarkLostReturned.BorderRadius = 8;
             this.btnMarkLostReturned.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(139)))));
-            this.btnMarkLostReturned.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.btnMarkLostReturned.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btnMarkLostReturned.ForeColor = System.Drawing.Color.White;
             this.btnMarkLostReturned.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(117)))));
             this.btnMarkLostReturned.Location = new System.Drawing.Point(16, 10);
@@ -877,7 +877,7 @@
             this.lblClaimRequestHint.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblClaimRequestHint.BackColor = System.Drawing.Color.Transparent;
-            this.lblClaimRequestHint.Font = new System.Drawing.Font("JetBrains Mono", 8.7F);
+            this.lblClaimRequestHint.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.7F);
             this.lblClaimRequestHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.lblClaimRequestHint.Location = new System.Drawing.Point(16, 52);
             this.lblClaimRequestHint.Name = "lblClaimRequestHint";
@@ -891,7 +891,7 @@
             this.dgvItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
@@ -900,7 +900,7 @@
             this.dgvItems.ColumnHeadersHeight = 38;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(244)))), ((int)(((byte)(238)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
@@ -912,7 +912,7 @@
             this.dgvItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
@@ -931,14 +931,14 @@
             this.dgvItems.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.dgvItems.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
             this.dgvItems.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvItems.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Bold);
+            this.dgvItems.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.dgvItems.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvItems.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvItems.ThemeStyle.HeaderStyle.Height = 38;
             this.dgvItems.ThemeStyle.ReadOnly = false;
             this.dgvItems.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvItems.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvItems.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("JetBrains Mono", 8.8F);
+            this.dgvItems.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.8F);
             this.dgvItems.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             this.dgvItems.ThemeStyle.RowsStyle.Height = 40;
             this.dgvItems.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(244)))), ((int)(((byte)(238)))));
@@ -956,7 +956,7 @@
             this.Controls.Add(this.panelUserBadge);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.lblTitle);
-            this.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.Name = "SecurityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Konsol Security - Lost and Found";

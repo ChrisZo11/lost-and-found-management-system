@@ -35,7 +35,7 @@ namespace LostAndFound
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1100, 700);
             this.Controls.Add(this.reportViewer);
-            this.Font = new System.Drawing.Font("JetBrains Mono", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.MinimumSize = new System.Drawing.Size(980, 640);
             this.Name = "ReportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

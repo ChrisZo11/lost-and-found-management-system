@@ -4,8 +4,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Text;
-using System.IO;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
@@ -16,9 +14,8 @@ namespace LostAndFound
     internal static class UiTheme
     {
         private static readonly ConditionalWeakTable<DataGridView, GridBadgeState> GridBadgeStates = new ConditionalWeakTable<DataGridView, GridBadgeState>();
-        private const string AppFontName = "JetBrains Mono";
-        private static readonly PrivateFontCollection AppFonts = new PrivateFontCollection();
-        private static readonly FontFamily AppFontFamily = LoadAppFontFamily();
+        private const string AppFontName = "Segoe UI Variable Text";
+        private static readonly FontFamily AppFontFamily = LoadSystemFontFamily();
 
         internal static readonly Color Canvas = Color.FromArgb(242, 246, 248);
         internal static readonly Color Surface = Color.White;
@@ -61,44 +58,15 @@ namespace LostAndFound
             return new Font(AppFontFamily, size, style, GraphicsUnit.Point);
         }
 
-        private static FontFamily LoadAppFontFamily()
+        private static FontFamily LoadSystemFontFamily()
         {
-            try
-            {
-                string fontsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Fonts");
-                string regularPath = Path.Combine(fontsPath, "JetBrainsMono-Regular.ttf");
-                string boldPath = Path.Combine(fontsPath, "JetBrainsMono-Bold.ttf");
-
-                if (File.Exists(regularPath))
-                {
-                    AppFonts.AddFontFile(regularPath);
-                }
-
-                if (File.Exists(boldPath))
-                {
-                    AppFonts.AddFontFile(boldPath);
-                }
-
-                foreach (FontFamily family in AppFonts.Families)
-                {
-                    if (string.Equals(family.Name, AppFontName, StringComparison.OrdinalIgnoreCase))
-                    {
-                        return family;
-                    }
-                }
-            }
-            catch
-            {
-                // Fall back below if the bundled font cannot be loaded.
-            }
-
             try
             {
                 return new FontFamily(AppFontName);
             }
             catch
             {
-                return FontFamily.GenericSansSerif;
+                return new FontFamily("Segoe UI");
             }
         }
 

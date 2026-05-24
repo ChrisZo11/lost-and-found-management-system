@@ -9,9 +9,6 @@ namespace LostAndFound
 {
     public partial class LoginForm : Form
     {
-        private Guna2GradientPanel brandCanvas;
-        private Label lblLoginError;
-
         public LoginForm()
         {
             InitializeComponent();
@@ -28,17 +25,13 @@ namespace LostAndFound
             guna2PanelBrand.Size = new Size(360, 496);
             guna2PanelBrand.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             guna2PanelBrand.BorderRadius = 18;
-            guna2PanelBrand.FillColor = Color.Transparent;
-            BuildBrandCanvas();
+            ConfigureBrandPanel();
 
             lblBrand.Text = "Lost & Found";
             UiTheme.StyleTitle(lblBrand, 25F);
             lblBrand.ForeColor = Color.White;
             lblBrand.Location = new Point(34, 92);
-
-            AddBrandLabel("ASSET RECOVERY DESK", new Point(36, 58), 8.8F, UiTheme.Accent, FontStyle.Bold);
-            AddBrandLabel("Temukan. Verifikasi. Kembalikan.", new Point(36, 142), 10F, Color.FromArgb(217, 226, 232), FontStyle.Regular);
-            AddBrandLabel("Admin / Security access", new Point(36, 446), 9.2F, Color.FromArgb(196, 212, 220), FontStyle.Bold);
+            ConfigureBrandLabel(lblBrandFooter, "Admin / Security access", new Point(36, 446), 9.2F, Color.FromArgb(196, 212, 220), FontStyle.Bold);
 
             UiTheme.StyleCard(guna2ShadowPanelLogin);
             guna2ShadowPanelLogin.Location = new Point(486, 78);
@@ -102,88 +95,30 @@ namespace LostAndFound
             guna2ShadowPanelLogin.Size = new Size(cardWidth, cardHeight);
         }
 
-        private void BuildBrandCanvas()
+        private void ConfigureBrandPanel()
         {
-            guna2PanelBrand.Controls.Clear();
-            brandCanvas = new Guna2GradientPanel
-            {
-                BorderRadius = 18,
-                Dock = DockStyle.Fill,
-                FillColor = UiTheme.HeaderDark,
-                FillColor2 = UiTheme.HeaderDeep,
-                GradientMode = LinearGradientMode.ForwardDiagonal,
-                Name = "brandCanvas"
-            };
-
-            guna2PanelBrand.Controls.Add(brandCanvas);
-            brandCanvas.Controls.Add(lblBrand);
+            guna2PanelBrand.FillColor = UiTheme.HeaderDark;
+            guna2PanelBrand.FillColor2 = UiTheme.HeaderDeep;
+            guna2PanelBrand.GradientMode = LinearGradientMode.ForwardDiagonal;
         }
 
-        private void AddBrandLabel(string text, Point location, float size, Color color, FontStyle style)
+        private void ConfigureBrandLabel(Guna2HtmlLabel label, string text, Point location, float size, Color color, FontStyle style)
         {
-            var label = new Guna2HtmlLabel
-            {
-                BackColor = Color.Transparent,
-                Font = UiTheme.Font(size, style),
-                ForeColor = color,
-                Location = location,
-                Text = text
-            };
-
-            brandCanvas.Controls.Add(label);
-        }
-
-        private void AddBrandMetric(string value, string caption, Point location)
-        {
-            var panel = new Guna2Panel
-            {
-                BorderColor = Color.FromArgb(53, 91, 105),
-                BorderRadius = 0,
-                BorderThickness = 1,
-                FillColor = Color.FromArgb(21, 49, 63),
-                Location = location,
-                Size = new Size(136, 48)
-            };
-
-            var valueLabel = new Label
-            {
-                AutoSize = false,
-                BackColor = Color.Transparent,
-                Font = UiTheme.DisplayFont(13F, FontStyle.Bold),
-                ForeColor = Color.White,
-                Location = new Point(12, 5),
-                Size = new Size(110, 22),
-                Text = value
-            };
-
-            var captionLabel = new Label
-            {
-                AutoSize = false,
-                BackColor = Color.Transparent,
-                Font = UiTheme.Font(7.8F),
-                ForeColor = Color.FromArgb(184, 199, 208),
-                Location = new Point(12, 27),
-                Size = new Size(110, 16),
-                Text = caption
-            };
-
-            panel.Controls.Add(valueLabel);
-            panel.Controls.Add(captionLabel);
-            brandCanvas.Controls.Add(panel);
+            label.BackColor = Color.Transparent;
+            label.Font = UiTheme.Font(size, style);
+            label.ForeColor = color;
+            label.Location = location;
+            label.Text = text;
         }
 
         private void EnsureLoginErrorLabel()
         {
-            if (lblLoginError == null)
+            if (lblLoginError.Parent != guna2ShadowPanelLogin)
             {
-                lblLoginError = new Label
-                {
-                    Name = "lblLoginError"
-                };
-                UiTheme.StyleInlineValidationLabel(lblLoginError);
                 guna2ShadowPanelLogin.Controls.Add(lblLoginError);
             }
 
+            UiTheme.StyleInlineValidationLabel(lblLoginError);
             lblLoginError.Location = new Point(34, 290);
             lblLoginError.Size = new Size(292, 24);
             lblLoginError.BringToFront();

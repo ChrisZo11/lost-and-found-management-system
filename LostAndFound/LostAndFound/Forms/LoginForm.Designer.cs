@@ -20,7 +20,7 @@ namespace LostAndFound
             this.btnWindowMaximize = new Guna.UI2.WinForms.Guna2Button();
             this.btnWindowMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.lblWindowTitle = new System.Windows.Forms.Label();
-            this.panelWindowIcon = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelWindowIcon = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelWindowDivider = new Guna.UI2.WinForms.Guna2Panel();
             this.panelCanvasAccentTop = new Guna.UI2.WinForms.Guna2Panel();
             this.panelCanvasAccentBottom = new Guna.UI2.WinForms.Guna2Panel();
@@ -54,6 +54,7 @@ namespace LostAndFound
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblLoginError = new System.Windows.Forms.Label();
             this.panelWindowChrome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelWindowIcon)).BeginInit();
             this.guna2PanelBrand.SuspendLayout();
             this.guna2ShadowPanelLogin.SuspendLayout();
             this.SuspendLayout();
@@ -127,21 +128,24 @@ namespace LostAndFound
             this.lblWindowTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblWindowTitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.lblWindowTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
-            this.lblWindowTitle.Location = new System.Drawing.Point(42, 12);
+            this.lblWindowTitle.Location = new System.Drawing.Point(52, 12);
             this.lblWindowTitle.Name = "lblWindowTitle";
-            this.lblWindowTitle.Size = new System.Drawing.Size(120, 18);
+            this.lblWindowTitle.Size = new System.Drawing.Size(160, 18);
             this.lblWindowTitle.TabIndex = 1;
             this.lblWindowTitle.Text = "Lost & Found";
             //
             // panelWindowIcon
             //
             this.panelWindowIcon.BackColor = System.Drawing.Color.Transparent;
-            this.panelWindowIcon.BorderRadius = 3;
-            this.panelWindowIcon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(161)))), ((int)(((byte)(38)))));
-            this.panelWindowIcon.Location = new System.Drawing.Point(24, 16);
+            this.panelWindowIcon.FillColor = System.Drawing.Color.Transparent;
+            this.panelWindowIcon.Image = global::LostAndFound.UiTheme.TitleBarLogo;
+            this.panelWindowIcon.ImageRotate = 0F;
+            this.panelWindowIcon.Location = new System.Drawing.Point(20, 9);
             this.panelWindowIcon.Name = "panelWindowIcon";
-            this.panelWindowIcon.Size = new System.Drawing.Size(10, 10);
+            this.panelWindowIcon.Size = new System.Drawing.Size(24, 24);
+            this.panelWindowIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.panelWindowIcon.TabIndex = 0;
+            this.panelWindowIcon.TabStop = false;
             //
             // panelWindowDivider
             //
@@ -203,7 +207,7 @@ namespace LostAndFound
             this.panelBrandBlockThree.BackColor = System.Drawing.Color.Transparent;
             this.panelBrandBlockThree.BorderRadius = 4;
             this.panelBrandBlockThree.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(161)))), ((int)(((byte)(38)))));
-            this.panelBrandBlockThree.Location = new System.Drawing.Point(276, 376);
+            this.panelBrandBlockThree.Location = new System.Drawing.Point(276, 394);
             this.panelBrandBlockThree.Name = "panelBrandBlockThree";
             this.panelBrandBlockThree.Size = new System.Drawing.Size(48, 8);
             this.panelBrandBlockThree.TabIndex = 17;
@@ -213,7 +217,7 @@ namespace LostAndFound
             this.panelBrandBlockTwo.BackColor = System.Drawing.Color.Transparent;
             this.panelBrandBlockTwo.BorderRadius = 4;
             this.panelBrandBlockTwo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
-            this.panelBrandBlockTwo.Location = new System.Drawing.Point(220, 354);
+            this.panelBrandBlockTwo.Location = new System.Drawing.Point(220, 372);
             this.panelBrandBlockTwo.Name = "panelBrandBlockTwo";
             this.panelBrandBlockTwo.Size = new System.Drawing.Size(104, 8);
             this.panelBrandBlockTwo.TabIndex = 16;
@@ -223,7 +227,7 @@ namespace LostAndFound
             this.panelBrandBlockOne.BackColor = System.Drawing.Color.Transparent;
             this.panelBrandBlockOne.BorderRadius = 4;
             this.panelBrandBlockOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(82)))), ((int)(((byte)(96)))));
-            this.panelBrandBlockOne.Location = new System.Drawing.Point(250, 332);
+            this.panelBrandBlockOne.Location = new System.Drawing.Point(250, 350);
             this.panelBrandBlockOne.Name = "panelBrandBlockOne";
             this.panelBrandBlockOne.Size = new System.Drawing.Size(74, 8);
             this.panelBrandBlockOne.TabIndex = 15;
@@ -271,11 +275,13 @@ namespace LostAndFound
             // panelBrandArtifact
             //
             this.panelBrandArtifact.BackColor = System.Drawing.Color.Transparent;
+            this.panelBrandArtifact.BackgroundImage = global::LostAndFound.UiTheme.TitleBarLogo;
+            this.panelBrandArtifact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelBrandArtifact.BorderRadius = 12;
-            this.panelBrandArtifact.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(53)))), ((int)(((byte)(67)))));
-            this.panelBrandArtifact.Location = new System.Drawing.Point(76, 246);
+            this.panelBrandArtifact.FillColor = System.Drawing.Color.Transparent;
+            this.panelBrandArtifact.Location = new System.Drawing.Point(104, 190);
             this.panelBrandArtifact.Name = "panelBrandArtifact";
-            this.panelBrandArtifact.Size = new System.Drawing.Size(176, 112);
+            this.panelBrandArtifact.Size = new System.Drawing.Size(152, 152);
             this.panelBrandArtifact.TabIndex = 20;
             //
             // panelBrandArtifactDot
@@ -287,6 +293,7 @@ namespace LostAndFound
             this.panelBrandArtifactDot.Name = "panelBrandArtifactDot";
             this.panelBrandArtifactDot.Size = new System.Drawing.Size(10, 10);
             this.panelBrandArtifactDot.TabIndex = 24;
+            this.panelBrandArtifactDot.Visible = false;
             //
             // panelBrandArtifactBottom
             //
@@ -297,6 +304,7 @@ namespace LostAndFound
             this.panelBrandArtifactBottom.Name = "panelBrandArtifactBottom";
             this.panelBrandArtifactBottom.Size = new System.Drawing.Size(64, 5);
             this.panelBrandArtifactBottom.TabIndex = 23;
+            this.panelBrandArtifactBottom.Visible = false;
             //
             // panelBrandArtifactMid
             //
@@ -307,6 +315,7 @@ namespace LostAndFound
             this.panelBrandArtifactMid.Name = "panelBrandArtifactMid";
             this.panelBrandArtifactMid.Size = new System.Drawing.Size(118, 5);
             this.panelBrandArtifactMid.TabIndex = 22;
+            this.panelBrandArtifactMid.Visible = false;
             //
             // panelBrandArtifactTop
             //
@@ -317,6 +326,7 @@ namespace LostAndFound
             this.panelBrandArtifactTop.Name = "panelBrandArtifactTop";
             this.panelBrandArtifactTop.Size = new System.Drawing.Size(82, 5);
             this.panelBrandArtifactTop.TabIndex = 21;
+            this.panelBrandArtifactTop.Visible = false;
             //
             // lblBrand
             //
@@ -350,9 +360,9 @@ namespace LostAndFound
             this.guna2ShadowPanelLogin.Location = new System.Drawing.Point(506, 114);
             this.guna2ShadowPanelLogin.Name = "guna2ShadowPanelLogin";
             this.guna2ShadowPanelLogin.Radius = 16;
-            this.guna2ShadowPanelLogin.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(222)))), ((int)(((byte)(230)))));
-            this.guna2ShadowPanelLogin.ShadowDepth = 4;
-            this.guna2ShadowPanelLogin.ShadowShift = 2;
+            this.guna2ShadowPanelLogin.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(218)))), ((int)(((byte)(226)))));
+            this.guna2ShadowPanelLogin.ShadowDepth = 6;
+            this.guna2ShadowPanelLogin.ShadowShift = 3;
             this.guna2ShadowPanelLogin.Size = new System.Drawing.Size(360, 414);
             this.guna2ShadowPanelLogin.TabIndex = 1;
             //
@@ -370,49 +380,49 @@ namespace LostAndFound
             //
             this.panelLoginRail.BackColor = System.Drawing.Color.Transparent;
             this.panelLoginRail.BorderRadius = 2;
-            this.panelLoginRail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(247)))), ((int)(((byte)(244)))));
-            this.panelLoginRail.Location = new System.Drawing.Point(20, 116);
+            this.panelLoginRail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(248)))), ((int)(((byte)(246)))));
+            this.panelLoginRail.Location = new System.Drawing.Point(21, 118);
             this.panelLoginRail.Name = "panelLoginRail";
-            this.panelLoginRail.Size = new System.Drawing.Size(3, 164);
+            this.panelLoginRail.Size = new System.Drawing.Size(2, 158);
             this.panelLoginRail.TabIndex = 9;
             // panelPasswordDot
             //
             this.panelPasswordDot.BackColor = System.Drawing.Color.Transparent;
-            this.panelPasswordDot.BorderRadius = 4;
+            this.panelPasswordDot.BorderRadius = 3;
             this.panelPasswordDot.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(176)))), ((int)(((byte)(165)))));
-            this.panelPasswordDot.Location = new System.Drawing.Point(17, 232);
+            this.panelPasswordDot.Location = new System.Drawing.Point(18, 232);
             this.panelPasswordDot.Name = "panelPasswordDot";
-            this.panelPasswordDot.Size = new System.Drawing.Size(9, 9);
+            this.panelPasswordDot.Size = new System.Drawing.Size(7, 7);
             this.panelPasswordDot.TabIndex = 14;
             //
             // panelUsernameDot
             //
             this.panelUsernameDot.BackColor = System.Drawing.Color.Transparent;
-            this.panelUsernameDot.BorderRadius = 4;
+            this.panelUsernameDot.BorderRadius = 3;
             this.panelUsernameDot.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(161)))), ((int)(((byte)(38)))));
-            this.panelUsernameDot.Location = new System.Drawing.Point(17, 140);
+            this.panelUsernameDot.Location = new System.Drawing.Point(18, 140);
             this.panelUsernameDot.Name = "panelUsernameDot";
-            this.panelUsernameDot.Size = new System.Drawing.Size(9, 9);
+            this.panelUsernameDot.Size = new System.Drawing.Size(7, 7);
             this.panelUsernameDot.TabIndex = 13;
             //
             // panelLoginCornerSide
             //
             this.panelLoginCornerSide.BackColor = System.Drawing.Color.Transparent;
             this.panelLoginCornerSide.BorderRadius = 2;
-            this.panelLoginCornerSide.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(247)))), ((int)(((byte)(244)))));
-            this.panelLoginCornerSide.Location = new System.Drawing.Point(310, 20);
+            this.panelLoginCornerSide.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(247)))), ((int)(((byte)(244)))));
+            this.panelLoginCornerSide.Location = new System.Drawing.Point(308, 20);
             this.panelLoginCornerSide.Name = "panelLoginCornerSide";
-            this.panelLoginCornerSide.Size = new System.Drawing.Size(4, 42);
+            this.panelLoginCornerSide.Size = new System.Drawing.Size(3, 38);
             this.panelLoginCornerSide.TabIndex = 12;
             //
             // panelLoginCornerTop
             //
             this.panelLoginCornerTop.BackColor = System.Drawing.Color.Transparent;
             this.panelLoginCornerTop.BorderRadius = 2;
-            this.panelLoginCornerTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(247)))), ((int)(((byte)(244)))));
-            this.panelLoginCornerTop.Location = new System.Drawing.Point(256, 20);
+            this.panelLoginCornerTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(247)))), ((int)(((byte)(244)))));
+            this.panelLoginCornerTop.Location = new System.Drawing.Point(260, 20);
             this.panelLoginCornerTop.Name = "panelLoginCornerTop";
-            this.panelLoginCornerTop.Size = new System.Drawing.Size(54, 4);
+            this.panelLoginCornerTop.Size = new System.Drawing.Size(48, 3);
             this.panelLoginCornerTop.TabIndex = 11;
             //
             // lblPassword
@@ -480,8 +490,10 @@ namespace LostAndFound
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
             this.txtPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(176)))), ((int)(((byte)(165)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
+            this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(205)))), ((int)(((byte)(201)))));
             this.txtPassword.Location = new System.Drawing.Point(34, 234);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -498,8 +510,10 @@ namespace LostAndFound
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.DefaultText = "";
             this.txtUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(176)))), ((int)(((byte)(165)))));
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F);
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
+            this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(205)))), ((int)(((byte)(201)))));
             this.txtUsername.Location = new System.Drawing.Point(34, 142);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(158)))), ((int)(((byte)(179)))));
@@ -538,6 +552,7 @@ namespace LostAndFound
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login - Lost and Found";
             this.panelWindowChrome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelWindowIcon)).EndInit();
             this.guna2PanelBrand.ResumeLayout(false);
             this.guna2PanelBrand.PerformLayout();
             this.guna2ShadowPanelLogin.ResumeLayout(false);
@@ -549,7 +564,7 @@ namespace LostAndFound
         private Guna.UI2.WinForms.Guna2GradientPanel guna2PanelBrand;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanelLogin;
         private Guna.UI2.WinForms.Guna2Panel panelWindowChrome;
-        private Guna.UI2.WinForms.Guna2Panel panelWindowIcon;
+        private Guna.UI2.WinForms.Guna2PictureBox panelWindowIcon;
         private System.Windows.Forms.Label lblWindowTitle;
         private Guna.UI2.WinForms.Guna2Button btnWindowMinimize;
         private Guna.UI2.WinForms.Guna2Button btnWindowMaximize;

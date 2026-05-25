@@ -53,9 +53,9 @@ namespace LostAndFound
             guna2ShadowPanelLogin.Size = new Size(360, 414);
             guna2ShadowPanelLogin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2ShadowPanelLogin.Radius = 16;
-            guna2ShadowPanelLogin.ShadowColor = Color.FromArgb(210, 222, 230);
-            guna2ShadowPanelLogin.ShadowDepth = 4;
-            guna2ShadowPanelLogin.ShadowShift = 2;
+            guna2ShadowPanelLogin.ShadowColor = Color.FromArgb(202, 218, 226);
+            guna2ShadowPanelLogin.ShadowDepth = 6;
+            guna2ShadowPanelLogin.ShadowShift = 3;
 
             lblLoginTitle.Text = "Masuk Sistem";
             lblLoginSubtitle.Text = "Akses dashboard sesuai role akun";
@@ -84,6 +84,10 @@ namespace LostAndFound
             txtPassword.PlaceholderText = "Masukkan password";
             txtUsername.TextOffset = new Point(4, 0);
             txtPassword.TextOffset = new Point(4, 0);
+            txtUsername.FocusedState.BorderColor = Color.FromArgb(63, 176, 165);
+            txtPassword.FocusedState.BorderColor = Color.FromArgb(63, 176, 165);
+            txtUsername.HoverState.BorderColor = Color.FromArgb(164, 205, 201);
+            txtPassword.HoverState.BorderColor = Color.FromArgb(164, 205, 201);
             txtUsername.Size = new Size(292, 46);
             txtPassword.Size = new Size(292, 46);
             btnLogin.Size = new Size(292, 48);
@@ -142,12 +146,11 @@ namespace LostAndFound
             ConfigurePanel(panelWindowDivider, new Point(0, 41), new Size(ClientSize.Width, 1), Color.FromArgb(224, 232, 238), 0);
             panelWindowDivider.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
 
-            ConfigurePanel(panelWindowIcon, new Point(24, 16), new Size(10, 10), UiTheme.Accent, 3);
             lblWindowTitle.Text = "Lost & Found";
             lblWindowTitle.BackColor = Color.Transparent;
             lblWindowTitle.Font = UiTheme.Font(9F, FontStyle.Bold);
             lblWindowTitle.ForeColor = UiTheme.Text;
-            lblWindowTitle.Location = new Point(42, 12);
+            UiTheme.StyleTitleBarLogo(panelWindowIcon, lblWindowTitle);
 
             ConfigureChromeButton(btnWindowMinimize, "-", new Point(ClientSize.Width - 126, 4));
             ConfigureChromeButton(btnWindowMaximize, "\u25A1", new Point(ClientSize.Width - 84, 4));
@@ -183,27 +186,29 @@ namespace LostAndFound
         {
             ConfigurePanel(panelBrandTitleMarker, new Point(36, 93), new Size(6, 54), UiTheme.Accent, 3);
             ConfigurePanel(panelBrandTitleRule, new Point(54, 149), new Size(112, 3), Color.FromArgb(63, 176, 165), 2);
-            ConfigurePanel(panelBrandBlockOne, new Point(250, 332), new Size(74, 8), Color.FromArgb(35, 82, 96), 4);
-            ConfigurePanel(panelBrandBlockTwo, new Point(220, 354), new Size(104, 8), Color.FromArgb(38, 103, 115), 4);
-            ConfigurePanel(panelBrandBlockThree, new Point(276, 376), new Size(48, 8), UiTheme.Accent, 4);
-            ConfigurePanel(panelBrandArtifact, new Point(76, 246), new Size(176, 112), Color.FromArgb(16, 53, 67), 12);
+            ConfigurePanel(panelBrandBlockOne, new Point(250, 350), new Size(74, 8), Color.FromArgb(35, 82, 96), 4);
+            ConfigurePanel(panelBrandBlockTwo, new Point(220, 372), new Size(104, 8), Color.FromArgb(38, 103, 115), 4);
+            ConfigurePanel(panelBrandBlockThree, new Point(276, 394), new Size(48, 8), UiTheme.Accent, 4);
+            ConfigurePanel(panelBrandArtifact, new Point(104, 190), new Size(152, 152), Color.Transparent, 12);
+            panelBrandArtifact.BackgroundImage = UiTheme.TitleBarLogo;
+            panelBrandArtifact.BackgroundImageLayout = ImageLayout.Zoom;
             ConfigurePanel(panelBrandArtifactTop, new Point(96, 270), new Size(82, 5), Color.FromArgb(56, 132, 142), 2);
             ConfigurePanel(panelBrandArtifactMid, new Point(96, 294), new Size(118, 5), Color.FromArgb(37, 86, 100), 2);
             ConfigurePanel(panelBrandArtifactBottom, new Point(96, 318), new Size(64, 5), UiTheme.Accent, 2);
             ConfigurePanel(panelBrandArtifactDot, new Point(224, 270), new Size(10, 10), Color.FromArgb(63, 176, 165), 5);
+            panelBrandArtifactTop.Visible = false;
+            panelBrandArtifactMid.Visible = false;
+            panelBrandArtifactBottom.Visible = false;
+            panelBrandArtifactDot.Visible = false;
             ConfigurePanel(panelBrandCornerBar, new Point(36, 438), new Size(84, 4), Color.FromArgb(52, 129, 139), 2);
             ConfigurePanel(panelBrandCornerRule, new Point(36, 456), new Size(132, 4), Color.FromArgb(32, 78, 91), 2);
             ConfigurePanel(panelLoginAccent, new Point(34, 20), new Size(64, 4), UiTheme.Accent, 2);
-            ConfigurePanel(panelLoginRail, new Point(20, 116), new Size(3, 164), Color.FromArgb(230, 247, 244), 2);
-            ConfigurePanel(panelLoginCornerTop, new Point(256, 20), new Size(54, 4), Color.FromArgb(230, 247, 244), 2);
-            ConfigurePanel(panelLoginCornerSide, new Point(310, 20), new Size(4, 42), Color.FromArgb(230, 247, 244), 2);
-            ConfigurePanel(panelUsernameDot, new Point(17, 140), new Size(9, 9), UiTheme.Accent, 4);
-            ConfigurePanel(panelPasswordDot, new Point(17, 232), new Size(9, 9), Color.FromArgb(63, 176, 165), 4);
-            panelBrandArtifact.SendToBack();
-            panelBrandArtifactTop.BringToFront();
-            panelBrandArtifactMid.BringToFront();
-            panelBrandArtifactBottom.BringToFront();
-            panelBrandArtifactDot.BringToFront();
+            ConfigurePanel(panelLoginRail, new Point(21, 118), new Size(2, 158), Color.FromArgb(235, 248, 246), 2);
+            ConfigurePanel(panelLoginCornerTop, new Point(260, 20), new Size(48, 3), Color.FromArgb(232, 247, 244), 2);
+            ConfigurePanel(panelLoginCornerSide, new Point(308, 20), new Size(3, 38), Color.FromArgb(232, 247, 244), 2);
+            ConfigurePanel(panelUsernameDot, new Point(18, 140), new Size(7, 7), UiTheme.Accent, 3);
+            ConfigurePanel(panelPasswordDot, new Point(18, 232), new Size(7, 7), Color.FromArgb(63, 176, 165), 3);
+            panelBrandArtifact.BringToFront();
         }
 
         private void ConfigurePanel(Guna2Panel panel, Point location, Size size, Color fillColor, int radius)

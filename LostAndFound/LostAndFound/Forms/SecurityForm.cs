@@ -54,6 +54,7 @@ namespace LostAndFound
         private Guna2Button btnShowLostItems;
         private Guna2Button btnMarkLostReturned;
         private SecurityGridMode gridMode = SecurityGridMode.FoundItems;
+        private bool initialDataLoaded;
 
         public SecurityForm()
             : this(
@@ -92,8 +93,22 @@ namespace LostAndFound
             }
 
             this.cameraController.FrameReady += cameraController_FrameReady;
-            LoadCameraDevices();
-            LoadRecentItems();
+            Shown += SecurityForm_Shown;
+        }
+
+        private void SecurityForm_Shown(object sender, EventArgs e)
+        {
+            if (initialDataLoaded)
+            {
+                return;
+            }
+
+            initialDataLoaded = true;
+            BeginInvoke(new Action(() =>
+            {
+                LoadCameraDevices();
+                LoadRecentItems();
+            }));
         }
 
         private void ConfigureHeader()
@@ -132,6 +147,7 @@ namespace LostAndFound
             lblWindowTitle.MouseDown += WindowChrome_MouseDown;
             panelWindowIcon.MouseDown += WindowChrome_MouseDown;
             panelWindowChrome.BringToFront();
+            UiTheme.StyleTitleBarLogo(panelWindowIcon, lblWindowTitle);
 
             ConfigureChromeButton(btnWindowMinimize, "-");
             ConfigureChromeButton(btnWindowMaximize, "□");

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
@@ -15,7 +16,9 @@ namespace LostAndFound
     {
         private static readonly ConditionalWeakTable<DataGridView, GridBadgeState> GridBadgeStates = new ConditionalWeakTable<DataGridView, GridBadgeState>();
         private const string AppFontName = "Segoe UI Variable Text";
+        private const string TitleBarLogoResourceName = "LostAndFound.Assets.Logo.Logo-LNF.png";
         private static readonly FontFamily AppFontFamily = LoadSystemFontFamily();
+        private static Image titleBarLogo;
 
         internal static readonly Color Canvas = Color.FromArgb(242, 246, 248);
         internal static readonly Color Surface = Color.White;
@@ -42,6 +45,8 @@ namespace LostAndFound
         internal static readonly Color DisabledText = Color.FromArgb(102, 112, 124);
 
         internal static string FontFamilyName => AppFontFamily.Name;
+
+        public static Image TitleBarLogo => LoadTitleBarLogo();
 
         internal static Font Font(float size, FontStyle style = FontStyle.Regular)
         {
@@ -165,6 +170,60 @@ namespace LostAndFound
             panel.ShadowColor = Color.FromArgb(211, 224, 231);
             panel.ShadowDepth = 4;
             panel.ShadowShift = 2;
+        }
+
+        internal static void StyleTitleBarLogo(Guna2Panel logoPanel, Label titleLabel)
+        {
+            if (logoPanel != null)
+            {
+                logoPanel.BackColor = Color.Transparent;
+                logoPanel.BackgroundImage = TitleBarLogo;
+                logoPanel.BackgroundImageLayout = ImageLayout.Zoom;
+                logoPanel.BorderRadius = 4;
+                logoPanel.FillColor = Color.Transparent;
+                logoPanel.Location = new Point(20, 9);
+                logoPanel.Size = new Size(24, 24);
+            }
+
+            if (titleLabel != null)
+            {
+                titleLabel.Location = new Point(52, 12);
+                titleLabel.Size = new Size(160, 18);
+            }
+        }
+
+        internal static void StyleTitleBarLogo(Guna2PictureBox logoPicture, Label titleLabel)
+        {
+            if (logoPicture != null)
+            {
+                logoPicture.BackColor = Color.Transparent;
+                logoPicture.FillColor = Color.Transparent;
+                logoPicture.Image = TitleBarLogo;
+                logoPicture.ImageRotate = 0F;
+                logoPicture.Location = new Point(20, 9);
+                logoPicture.Size = new Size(24, 24);
+                logoPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+
+            if (titleLabel != null)
+            {
+                titleLabel.Location = new Point(52, 12);
+                titleLabel.Size = new Size(160, 18);
+            }
+        }
+
+        private static Image LoadTitleBarLogo()
+        {
+            if (titleBarLogo != null)
+            {
+                return titleBarLogo;
+            }
+
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(TitleBarLogoResourceName))
+            {
+                titleBarLogo = stream == null ? null : new Bitmap(stream);
+                return titleBarLogo;
+            }
         }
 
         internal static void StylePrimaryButton(Guna2Button button)

@@ -185,7 +185,7 @@ namespace LostAndFound
             this.lblWindowTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblWindowTitle.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.lblWindowTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
-            this.lblWindowTitle.Location = new System.Drawing.Point(42, 12);
+            this.lblWindowTitle.Location = new System.Drawing.Point(52, 12);
             this.lblWindowTitle.Name = "lblWindowTitle";
             this.lblWindowTitle.Size = new System.Drawing.Size(160, 18);
             this.lblWindowTitle.TabIndex = 1;
@@ -194,11 +194,13 @@ namespace LostAndFound
             // panelWindowIcon
             //
             this.panelWindowIcon.BackColor = System.Drawing.Color.Transparent;
-            this.panelWindowIcon.BorderRadius = 3;
-            this.panelWindowIcon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(161)))), ((int)(((byte)(38)))));
-            this.panelWindowIcon.Location = new System.Drawing.Point(24, 16);
+            this.panelWindowIcon.BackgroundImage = global::LostAndFound.UiTheme.TitleBarLogo;
+            this.panelWindowIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelWindowIcon.BorderRadius = 4;
+            this.panelWindowIcon.FillColor = System.Drawing.Color.Transparent;
+            this.panelWindowIcon.Location = new System.Drawing.Point(20, 9);
             this.panelWindowIcon.Name = "panelWindowIcon";
-            this.panelWindowIcon.Size = new System.Drawing.Size(10, 10);
+            this.panelWindowIcon.Size = new System.Drawing.Size(24, 24);
             this.panelWindowIcon.TabIndex = 0;
             //
             // panelWindowDivider

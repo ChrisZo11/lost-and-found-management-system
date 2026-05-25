@@ -44,6 +44,7 @@ namespace LostAndFound
         private Label lblClaimsEmptyState;
         private Guna2Button btnShowLostItems;
         private AdminGridMode gridMode = AdminGridMode.FoundItems;
+        private bool initialDataLoaded;
 
         public AdminForm()
             : this(new Item(), new Claim(), PhotoStorageService.CreateDefault())
@@ -73,8 +74,22 @@ namespace LostAndFound
                 return;
             }
 
-            LoadItems();
-            LoadStats();
+            Shown += AdminForm_Shown;
+        }
+
+        private void AdminForm_Shown(object sender, EventArgs e)
+        {
+            if (initialDataLoaded)
+            {
+                return;
+            }
+
+            initialDataLoaded = true;
+            BeginInvoke(new Action(() =>
+            {
+                LoadItems();
+                LoadStats();
+            }));
         }
 
         private void ConfigureHeader()
@@ -150,6 +165,7 @@ namespace LostAndFound
             lblWindowTitle.MouseDown += WindowChrome_MouseDown;
             panelWindowIcon.MouseDown += WindowChrome_MouseDown;
             panelWindowChrome.BringToFront();
+            UiTheme.StyleTitleBarLogo(panelWindowIcon, lblWindowTitle);
 
             ConfigureChromeButton(btnWindowMinimize, "-");
             ConfigureChromeButton(btnWindowMaximize, "□");

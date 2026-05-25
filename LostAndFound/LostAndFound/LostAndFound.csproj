@@ -190,6 +190,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Logo\Logo-LNF.png">
+      <LogicalName>LostAndFound.Assets.Logo.Logo-LNF.png</LogicalName>
+    </EmbeddedResource>
     <Content Include="Reports\ItemsReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

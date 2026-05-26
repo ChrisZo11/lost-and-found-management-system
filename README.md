@@ -13,6 +13,9 @@ Aplikasi desktop C# WinForms untuk mengelola laporan barang hilang dan barang te
 | Christian Zoe Beru Tena | 00000108336 |
 
 ---
+## Demo
+https://github.com/user-attachments/assets/79f8a3b8-8863-4a93-ac30-a71927799653
+
 
 ## Daftar Isi
 
